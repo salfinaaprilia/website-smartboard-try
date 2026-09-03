@@ -1,0 +1,825 @@
+/* ==========================================================================
+   Cahaya Mustika Internesia — Interactive Flat Panel
+   Lightweight rebuild (vanilla HTML/CSS/JS, no framework)
+   ========================================================================== */
+
+:root{
+  --primary:#1479d1;
+  --primary-dark:#0b1f3a;
+  --link:#0a58ca;
+  --accent:#1556a6;
+  --heading:#172033;
+  --text:#212529;
+  --muted:#667085;
+  --muted-2:#6c757d;
+  --bg-alt:#f7f9fc;
+  --border:#e5e9ef;
+  --icon-bg:#edf4fb;
+  --white:#ffffff;
+
+  --container:1200px;
+  --radius-sm:6px;
+  --radius-md:10px;
+  --radius-lg:12px;
+  --radius-xl:15px;
+  --radius-pill:30px;
+
+  --shadow-sm:0 3px 12px rgba(0,0,0,.06);
+  --shadow-md:0 4px 15px rgba(0,0,0,.05);
+  --shadow-lg:0 10px 35px rgba(0,0,0,.12);
+
+  --font:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font);
+  font-size:16px;
+  line-height:1.6;
+  color:var(--text);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+ul{margin:0;padding:0;list-style:none;}
+h1,h2,h3,h4,p{margin:0;}
+.container{
+  width:100%;
+  max-width:var(--container);
+  margin-inline:auto;
+  padding-inline:20px;
+}
+
+/* ---------- Header ---------- */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255,255,255,.8);
+  -webkit-backdrop-filter:blur(18px) saturate(1.6);
+  backdrop-filter:blur(18px) saturate(1.6);
+  border-bottom:.8px solid rgba(8,32,63,.08);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding-block:22px;
+}
+.logo img{height:42px;width:auto;}
+.main-nav ul{display:flex;align-items:center;gap:4px;}
+.main-nav a{
+  display:block;
+  padding:9px 12px;
+  font-size:14.5px;
+  font-weight:600;
+  color:var(--heading);
+  letter-spacing:-.1px;
+  border-radius:6px;
+  transition:color .2s ease, background-color .2s ease;
+}
+.main-nav a:hover,.main-nav a.active{color:var(--primary);background:var(--icon-bg);}
+.nav-toggle{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:5px;
+  width:38px;
+  height:38px;
+  border:1px solid var(--border);
+  border-radius:6px;
+  background:var(--white);
+  cursor:pointer;
+}
+.nav-toggle span{display:block;height:2px;width:18px;margin-inline:auto;background:var(--heading);}
+
+/* ---------- Buttons ---------- */
+.btn-primary,.btn-outline{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 27px;
+  border-radius:var(--radius-sm);
+  font-family:inherit;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+  transition:background-color .15s ease,border-color .15s ease;
+}
+.btn-primary{background:var(--primary);color:var(--white);border:1px solid var(--primary);}
+.btn-primary:hover{background:#1266b3;}
+.btn-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.8);}
+.btn-outline:hover{background:rgba(255,255,255,.12);}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  min-height:650px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  color:var(--white);
+}
+.hero-bg-image{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(11,31,58,.95) 0%,rgba(11,31,58,.75) 25%,rgba(11,31,58,.4) 50%,rgba(11,31,58,.08) 75%,rgba(11,31,58,0) 100%);
+  z-index:1;
+}
+.hero .container{position:relative;z-index:2;}
+.hero-content{max-width:600px;padding-block:60px;}
+.hero-badge{
+  display:inline-block;
+  background:var(--primary);
+  color:var(--white);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  padding:8px 16px;
+  border-radius:var(--radius-pill);
+  margin-bottom:22px;
+}
+.hero-content h1{
+  font-size:42px;
+  font-weight:800;
+  line-height:1.15;
+  margin-bottom:20px;
+}
+.hero-desc{
+  font-size:16px;
+  color:#dce6f2;
+  margin-bottom:32px;
+  max-width:520px;
+}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:16px;}
+
+/* ---------- Benefits ---------- */
+.benefits{padding-bottom:40px;}
+.benefits .container{position:relative;}
+.benefits-box{
+  position:relative;
+  z-index:2;
+  margin-top:-56px;
+  background:var(--white);
+  border-radius:var(--radius-xl);
+  box-shadow:var(--shadow-lg);
+  padding:32px 28px;
+  display:flex;
+  align-items:stretch;
+  flex-wrap:wrap;
+}
+.benefit-item{
+  flex:1 1 0;
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  padding:4px 24px;
+  border-left:1px solid var(--border);
+}
+.benefit-item:first-child{border-left:none;}
+.benefit-icon{
+  flex:none;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  font-weight:700;
+  font-style:normal;
+  background:var(--icon-bg);
+  color:var(--primary-dark);
+}
+.benefit-text h3{font-size:16px;font-weight:700;color:var(--heading);margin-bottom:6px;line-height:1.3;}
+.benefit-text p{font-size:14px;color:var(--muted);line-height:1.5;}
+
+/* ---------- Tantangan ---------- */
+.tantangan{padding:75px 0;}
+.tantangan-grid{
+  display:grid;
+  grid-template-columns:0.85fr 1.15fr;
+  gap:90px;
+}
+.tantangan-intro{max-width:420px;}
+.tantangan-label{
+  display:block;
+  color:var(--accent);
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  margin-bottom:20px;
+}
+.tantangan-intro h2{
+  font-size:36px;
+  font-weight:800;
+  line-height:1.25;
+  color:var(--heading);
+  letter-spacing:-.3px;
+  margin-bottom:22px;
+}
+.tantangan-intro p{
+  font-size:15px;
+  line-height:1.75;
+  color:var(--muted);
+}
+
+.tantangan-list{display:flex;flex-direction:column;}
+.tantangan-item{
+  display:grid;
+  grid-template-columns:72px 1fr;
+  gap:24px;
+  padding:32px 0;
+  border-top:1px solid var(--border);
+}
+.tantangan-item:first-child{padding-top:0;border-top:none;}
+.tantangan-item:last-child{padding-bottom:0;}
+.tantangan-number{
+  font-size:30px;
+  font-weight:800;
+  color:var(--primary);
+  letter-spacing:.5px;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.tantangan-content h3{
+  font-size:19px;
+  font-weight:700;
+  color:var(--heading);
+  margin-bottom:10px;
+  letter-spacing:-.1px;
+}
+.tantangan-content p{
+  font-size:15px;
+  line-height:1.7;
+  color:var(--muted);
+}
+
+/* ---------- Solusi ---------- */
+.solusi{padding:75px 0;}
+.solusi-heading{max-width:640px;margin:0 auto 56px;text-align:center;}
+.solusi-label{
+  display:block;
+  color:var(--accent);
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  margin-bottom:20px;
+}
+.solusi-heading h2{
+  font-size:36px;
+  font-weight:800;
+  line-height:1.25;
+  color:var(--heading);
+  letter-spacing:-.3px;
+  margin-bottom:18px;
+}
+.solusi-heading p{
+  font-size:15px;
+  line-height:1.75;
+  color:var(--muted);
+}
+
+.solusi-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:28px;
+}
+.solusi-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-sm);
+  overflow:hidden;
+}
+/* Higher specificity than .reveal so entrance + hover transitions combine instead of one clobbering the other */
+.solusi-card.reveal{
+  transition:opacity .6s ease, transform .5s ease, box-shadow .4s ease;
+}
+.solusi-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow-md);
+}
+.solusi-image{
+  aspect-ratio:3/2;
+  overflow:hidden;
+  background:var(--bg-alt);
+}
+.solusi-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s ease;
+}
+.solusi-card:hover .solusi-image img{transform:scale(1.06);}
+.solusi-content{padding:24px;}
+.solusi-number{
+  display:block;
+  font-size:14px;
+  font-weight:800;
+  color:var(--primary);
+  letter-spacing:.5px;
+  margin-bottom:10px;
+  transition:transform .4s ease;
+}
+.solusi-card:hover .solusi-number{transform:translateX(3px);}
+.solusi-content h3{
+  font-size:17px;
+  font-weight:700;
+  color:var(--heading);
+  margin-bottom:8px;
+  letter-spacing:-.1px;
+}
+.solusi-content p{
+  font-size:14px;
+  line-height:1.65;
+  color:var(--muted);
+}
+
+/* ---------- Produk ---------- */
+.produk{padding:70px 0;}
+.produk-heading{max-width:640px;margin:0 auto 36px;text-align:center;}
+.produk-label{
+  display:block;
+  color:var(--accent);
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  margin-bottom:6px;
+}
+.produk-heading h2{
+  font-size:30px;
+  font-weight:800;
+  line-height:1.25;
+  color:var(--heading);
+  letter-spacing:-.3px;
+}
+
+.produk-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+.produk-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-sm);
+  overflow:hidden;
+}
+.produk-card.reveal{
+  transition:opacity .6s ease, transform .5s ease, box-shadow .3s ease;
+}
+.produk-card:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow-md);
+}
+.produk-image{
+  aspect-ratio:16/9;
+  overflow:hidden;
+  background:var(--bg-alt);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.produk-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:18px;
+  opacity:0;
+  transform:scale(1.08);
+  transition:opacity .6s ease, transform .6s ease;
+}
+.produk-card.is-visible .produk-image img{opacity:1;transform:scale(1);}
+.produk-card:hover .produk-image img{transform:scale(1.06);}
+.produk-content{padding:22px 24px 26px;}
+.produk-content h3{
+  font-size:18px;
+  font-weight:700;
+  color:var(--heading);
+  margin-bottom:14px;
+  letter-spacing:-.1px;
+}
+.produk-spec-label{
+  display:block;
+  font-size:12px;
+  font-weight:700;
+  color:var(--primary);
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  margin-bottom:10px;
+}
+.produk-spec-list{list-style:none;margin:0;padding:0;}
+.produk-spec-list li{
+  font-size:14px;
+  line-height:1.8;
+  color:var(--muted);
+  padding-block:2px;
+  border-top:1px solid var(--border);
+}
+.produk-spec-list li:first-child{border-top:none;}
+
+/* ---------- Alasan Memilih CMI ---------- */
+.alasan{padding:80px 0;}
+.alasan-grid{
+  display:grid;
+  grid-template-columns:minmax(260px,38%) 1fr;
+  gap:90px;
+}
+.alasan-intro{text-align:left;}
+.alasan-label{
+  display:block;
+  color:var(--accent);
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  margin-bottom:18px;
+}
+.alasan-intro h2{
+  font-size:34px;
+  font-weight:800;
+  line-height:1.25;
+  color:var(--heading);
+  letter-spacing:-.3px;
+  margin-bottom:20px;
+}
+.alasan-intro p{
+  font-size:15px;
+  line-height:1.75;
+  color:var(--muted);
+  max-width:400px;
+}
+
+.alasan-timeline{position:relative;}
+.alasan-timeline::before{
+  content:"";
+  position:absolute;
+  left:27px;
+  top:27px;
+  bottom:27px;
+  width:2px;
+  background:rgba(20,121,209,.2);
+  transform:scaleY(0);
+  transform-origin:top;
+  transition:transform .9s ease;
+}
+.alasan-timeline.is-visible::before{transform:scaleY(1);}
+
+.timeline-step{
+  position:relative;
+  display:grid;
+  grid-template-columns:56px 1fr;
+  gap:24px;
+  padding-bottom:44px;
+}
+.timeline-step:last-child{padding-bottom:0;}
+.timeline-marker{
+  position:relative;
+  z-index:2;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:var(--white);
+  border:2px solid var(--primary);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  font-weight:800;
+  color:var(--primary);
+  transition:background-color .3s ease, color .3s ease, border-color .3s ease;
+}
+.timeline-content h3{
+  font-size:18px;
+  font-weight:700;
+  color:var(--heading);
+  margin-bottom:8px;
+  padding-top:12px;
+  transition:color .3s ease;
+}
+.timeline-content p{
+  font-size:14px;
+  line-height:1.7;
+  color:var(--muted);
+  max-width:480px;
+}
+.timeline-step:hover .timeline-marker{
+  background:var(--primary);
+  color:var(--white);
+}
+.timeline-step:hover .timeline-content h3{color:var(--primary);}
+
+/* ---------- CTA ---------- */
+.cta{
+  position:relative;
+  background:var(--primary-dark);
+  padding:110px 0;
+  overflow:hidden;
+}
+.cta-decor{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+.cta-decor::before,
+.cta-decor::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(20,121,209,.35) 0%, rgba(20,121,209,0) 70%);
+}
+.cta-decor::before{
+  width:520px;
+  height:520px;
+  top:-220px;
+  left:-160px;
+}
+.cta-decor::after{
+  width:420px;
+  height:420px;
+  bottom:-200px;
+  right:-140px;
+  background:radial-gradient(circle, rgba(255,255,255,.08) 0%, rgba(255,255,255,0) 70%);
+}
+.cta-container{
+  position:relative;
+  z-index:1;
+  max-width:680px;
+  margin-inline:auto;
+  text-align:center;
+}
+.cta-label{
+  display:block;
+  color:#8fb8e6;
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  margin-bottom:20px;
+}
+.cta-container h2{
+  font-size:42px;
+  font-weight:800;
+  line-height:1.2;
+  color:var(--white);
+  letter-spacing:-.5px;
+  margin-bottom:20px;
+}
+.cta-container p{
+  font-size:16px;
+  line-height:1.75;
+  color:#c7d3e2;
+  margin-bottom:40px;
+}
+.btn-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--white);
+  color:var(--primary-dark);
+  border:none;
+  font-family:inherit;
+  font-size:15px;
+  font-weight:700;
+  padding:16px 32px;
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,.15);
+}
+/* Higher specificity than .reveal so entrance fade-up + hover transitions combine instead of clobbering */
+.btn-cta.reveal{
+  /* Delay lives only on opacity so the entrance stagger doesn't also lag the hover lift/shadow (which reuse transform/background-color). */
+  transition:opacity .6s ease .45s, transform .3s ease, background-color .3s ease, box-shadow .3s ease;
+}
+.btn-cta:hover{
+  background:#eef3f9;
+  transform:translateY(-3px);
+  box-shadow:0 10px 24px rgba(0,0,0,.22);
+}
+
+/* ---------- Footer ---------- */
+.site-footer{
+  background:var(--white);
+  color:var(--muted);
+  padding-top:70px;
+  border-top:1px solid var(--border);
+}
+.footer-top{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1.3fr;
+  gap:60px;
+  padding-bottom:50px;
+}
+.footer-logo{
+  width:150px;
+  height:150px;
+  object-fit:contain;
+  margin-bottom:18px;
+}
+.footer-brand p{
+  font-size:14px;
+  line-height:1.75;
+  color:var(--muted);
+  max-width:340px;
+}
+.footer-links h4,
+.footer-contact h4{
+  font-size:14px;
+  font-weight:600;
+  color:var(--heading);
+  margin-bottom:16px;
+  letter-spacing:.2px;
+}
+.footer-links ul li{margin-bottom:12px;}
+.footer-links a{
+  font-size:13.5px;
+  color:var(--muted);
+  transition:color .3s ease;
+}
+.footer-links a:hover{color:var(--primary);}
+.footer-contact p{
+  font-size:13.5px;
+  line-height:1.75;
+  color:var(--muted);
+  margin-bottom:14px;
+  max-width:300px;
+}
+.footer-bottom{
+  border-top:.8px solid var(--border);
+  padding:18px 0;
+}
+.footer-bottom .container{
+  font-size:13px;
+  color:var(--muted);
+  text-align:left;
+}
+
+/* Scroll reveal animation */
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity .7s ease, transform .7s ease;
+}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+.site-footer .reveal{transform:translateY(18px);}
+.site-footer .reveal.is-visible{transform:translateY(0);}
+/* Target the CTA text elements explicitly (not ".cta .reveal") so this doesn't clobber
+   .btn-cta.reveal's own fine-tuned transition (which keeps hover instant, see above). */
+.cta-label.reveal,
+.cta-container h2.reveal,
+.cta-container p.reveal{transform:translateY(20px);}
+.cta-label.reveal.is-visible,
+.cta-container h2.reveal.is-visible,
+.cta-container p.reveal.is-visible{transform:translateY(0);}
+.footer-brand.reveal{transition-delay:0ms;}
+.footer-links.reveal{transition-delay:130ms;}
+.footer-contact.reveal{transition-delay:260ms;}
+.footer-bottom.reveal{transition-delay:390ms;}
+.tantangan-list .reveal:nth-child(1){transition-delay:0ms;}
+.tantangan-list .reveal:nth-child(2){transition-delay:120ms;}
+.tantangan-list .reveal:nth-child(3){transition-delay:240ms;}
+.tantangan-list .reveal:nth-child(4){transition-delay:360ms;}
+.solusi-grid .reveal:nth-child(1){transition-delay:0ms;}
+.solusi-grid .reveal:nth-child(2){transition-delay:120ms;}
+.solusi-grid .reveal:nth-child(3){transition-delay:240ms;}
+.solusi-grid .reveal:nth-child(4){transition-delay:360ms;}
+.produk-heading h2.reveal{transition-delay:150ms;}
+.produk-grid .reveal:nth-child(1){transition-delay:0ms;}
+.produk-grid .reveal:nth-child(2){transition-delay:180ms;}
+.produk-grid .reveal:nth-child(3){transition-delay:360ms;}
+
+.alasan-intro .alasan-label.reveal{transition-delay:0ms;}
+.alasan-intro h2.reveal{transition-delay:120ms;}
+.alasan-intro p.reveal{transition-delay:240ms;}
+/* The timeline wrapper itself only needs to toggle .is-visible for the connecting line;
+   its own fade/translate is neutralized so it doesn't double-animate on top of each step. */
+.alasan-timeline.reveal{opacity:1;transform:none;transition:none;}
+.alasan-timeline .timeline-step:nth-child(1){transition-delay:0ms;}
+.alasan-timeline .timeline-step:nth-child(2){transition-delay:180ms;}
+.alasan-timeline .timeline-step:nth-child(3){transition-delay:360ms;}
+.alasan-timeline .timeline-step:nth-child(4){transition-delay:540ms;}
+
+.cta-label.reveal{transition-delay:0ms;}
+.cta-container h2.reveal{transition-delay:150ms;}
+.cta-container p.reveal{transition-delay:300ms;}
+
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+  .solusi-card,.solusi-image img,.solusi-number{transition:none;}
+  .produk-card,.produk-image img{transition:none;}
+  .produk-image img{opacity:1;transform:none;}
+  .alasan-timeline::before{transform:scaleY(1);transition:none;}
+  .timeline-marker,.timeline-content h3{transition:none;}
+  .btn-cta{transition:none;}
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width:991px){
+  .main-nav{
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    background:var(--white);
+    border-bottom:1px solid var(--border);
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+    display:none;
+  }
+  .main-nav.is-open{display:block;}
+  .main-nav ul{flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 16px;}
+  .main-nav a{padding:12px 8px;}
+  .site-header{position:relative;}
+  .nav-toggle{display:flex;}
+
+  .hero{min-height:auto;padding-block:50px;}
+  .hero-content h1{font-size:32px;}
+  .benefits-box{flex-direction:column;margin-top:-32px;}
+  .benefit-item{border-left:none;border-top:1px solid var(--border);padding:16px 4px;}
+  .benefit-item:first-child{border-top:none;}
+
+  .tantangan{padding:60px 0;}
+  .tantangan-grid{grid-template-columns:1fr;gap:48px;}
+  .tantangan-intro{max-width:none;}
+  .tantangan-intro h2{font-size:30px;}
+
+  .solusi{padding:60px 0;}
+  .solusi-heading h2{font-size:30px;}
+  .solusi-grid{grid-template-columns:repeat(2,1fr);gap:22px;}
+
+  .produk{padding:56px 0;}
+  .produk-heading h2{font-size:26px;}
+  .produk-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
+
+  .alasan{padding:60px 0;}
+  .alasan-grid{grid-template-columns:minmax(220px,36%) 1fr;gap:50px;}
+  .alasan-intro h2{font-size:28px;}
+
+  .cta{padding:80px 0;}
+  .cta-container h2{font-size:34px;}
+
+  .site-footer{padding-top:56px;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:40px 32px;padding-bottom:40px;}
+  .footer-brand{grid-column:1 / -1;}
+}
+
+@media (max-width:640px){
+  .container{padding-inline:16px;}
+  .hero-content h1{font-size:26px;}
+  .hero-buttons{flex-direction:column;align-items:stretch;}
+  .benefits-box{padding:20px;margin-top:-20px;}
+
+  .tantangan{padding:44px 0;}
+  .tantangan-intro h2{font-size:26px;}
+  .tantangan-item{grid-template-columns:48px 1fr;gap:16px;padding:24px 0;}
+  .tantangan-number{font-size:24px;}
+
+  .solusi{padding:44px 0;}
+  .solusi-heading{margin-bottom:36px;}
+  .solusi-heading h2{font-size:24px;}
+  .solusi-grid{grid-template-columns:1fr;gap:20px;}
+
+  .produk{padding:40px 0;}
+  .produk-heading{margin-bottom:32px;}
+  .produk-heading h2{font-size:22px;}
+  .produk-grid{grid-template-columns:1fr;gap:20px;}
+
+  .alasan{padding:44px 0;}
+  .alasan-grid{grid-template-columns:1fr;gap:40px;}
+  .alasan-intro h2{font-size:26px;}
+  .alasan-intro p{max-width:none;}
+  .timeline-step{grid-template-columns:44px 1fr;gap:16px;padding-bottom:32px;}
+  .timeline-marker{width:44px;height:44px;font-size:14px;}
+  .alasan-timeline::before{left:21px;}
+  .timeline-content p{max-width:none;}
+
+  .cta{padding:60px 0;}
+  .cta-container h2{font-size:26px;}
+  .cta-container p{font-size:15px;margin-bottom:32px;}
+  .btn-cta{width:100%;justify-content:center;padding:15px 24px;}
+
+  .site-footer{padding-top:44px;}
+  .footer-top{grid-template-columns:1fr;gap:32px;padding-bottom:32px;}
+  .footer-brand{grid-column:auto;}
+  .footer-brand p,.footer-contact p{max-width:none;}
+}
