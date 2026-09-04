@@ -86,7 +86,80 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   border-radius:6px;
   transition:color .2s ease, background-color .2s ease;
 }
-.main-nav a:hover,.main-nav a.active{color:var(--primary);background:var(--icon-bg);}
+.main-nav .nav-dropdown-toggle{
+  padding:9px 12px;
+  font-size:14.5px;
+  font-weight:600;
+  color:var(--heading);
+  letter-spacing:-.1px;
+  border-radius:6px;
+  transition:color .2s ease, background-color .2s ease;
+}
+.main-nav a:hover,
+.main-nav .nav-dropdown-toggle:hover,
+.has-dropdown.is-open .nav-dropdown-toggle{color:var(--primary);}
+
+/* Produk dropdown */
+.has-dropdown{position:relative;}
+.nav-dropdown-toggle{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  background:none;
+  border:none;
+  font-family:inherit;
+  cursor:pointer;
+}
+.nav-caret{
+  flex:none;
+  display:block;
+  width:7px;
+  height:7px;
+  border-right:2px solid currentColor;
+  border-bottom:2px solid currentColor;
+  border-radius:1px;
+  transform:rotate(45deg);
+  margin-top:-3px;
+  transition:transform .2s ease;
+}
+.has-dropdown.is-open .nav-caret{transform:rotate(-135deg);margin-top:2px;}
+.nav-dropdown{
+  position:absolute;
+  top:calc(100% + 10px);
+  left:0;
+  display:flex;
+  flex-direction:column;
+  width:240px;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-md);
+  box-shadow:0 8px 24px rgba(8,32,63,.08);
+  padding:8px;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(6px);
+  transition:opacity .2s ease, transform .2s ease, visibility .2s;
+  z-index:60;
+}
+.has-dropdown.is-open .nav-dropdown{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+.nav-dropdown li{width:100%;}
+.nav-dropdown li + li{border-top:1px solid var(--border);margin-top:2px;padding-top:2px;}
+.nav-dropdown a{
+  display:block;
+  width:100%;
+  padding:10px 14px;
+  font-size:14px;
+  font-weight:500;
+  color:var(--heading);
+  border-radius:6px;
+  white-space:nowrap;
+  transition:color .2s ease, background-color .2s ease;
+}
+.nav-dropdown a:hover{color:var(--primary);background:var(--icon-bg);}
 .header-actions{grid-column:3;justify-self:end;display:flex;align-items:center;gap:14px;}
 .btn-header{
   display:inline-flex;
@@ -776,6 +849,26 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
     display:flex;
     margin:4px 20px 16px;
   }
+
+  /* Produk dropdown becomes an inline accordion inside the mobile menu */
+  .has-dropdown{position:static;}
+  .nav-dropdown-toggle{width:100%;justify-content:space-between;padding:12px 8px;}
+  .nav-dropdown{
+    position:static;
+    display:none;
+    opacity:1;
+    visibility:visible;
+    transform:none;
+    width:100%;
+    background:var(--bg-alt);
+    border:none;
+    box-shadow:none;
+    border-radius:8px;
+    padding:4px;
+    margin:2px 0 6px;
+  }
+  .has-dropdown.is-open .nav-dropdown{display:block;}
+  .nav-dropdown a{padding:10px 16px;font-size:13.5px;}
 
   .hero{min-height:auto;padding-block:50px;}
   .hero-content h1{font-size:32px;}

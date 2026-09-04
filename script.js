@@ -14,9 +14,37 @@
       link.addEventListener('click', function () {
         nav.classList.remove('is-open');
         toggle.setAttribute('aria-expanded', 'false');
+        closeDropdowns();
       });
     });
   }
+
+  // "Produk" dropdown menu
+  var dropdowns = document.querySelectorAll('.has-dropdown');
+  function closeDropdowns(except) {
+    dropdowns.forEach(function (item) {
+      if (item === except) return;
+      item.classList.remove('is-open');
+      var btn = item.querySelector('.nav-dropdown-toggle');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  }
+  dropdowns.forEach(function (item) {
+    var dropToggle = item.querySelector('.nav-dropdown-toggle');
+    if (!dropToggle) return;
+    dropToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = item.classList.toggle('is-open');
+      dropToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      closeDropdowns(item);
+    });
+  });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.has-dropdown')) closeDropdowns();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeDropdowns();
+  });
 
   // Scroll reveal animation (fade-up), one-time per element
   var revealEls = document.querySelectorAll('.reveal');
