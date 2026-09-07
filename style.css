@@ -258,7 +258,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   background:var(--white);
   border-radius:var(--radius-xl);
   box-shadow:var(--shadow-lg);
-  padding:32px 28px;
+  padding:26px 28px;
   display:flex;
   align-items:stretch;
   flex-wrap:wrap;
@@ -267,27 +267,36 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   flex:1 1 0;
   display:flex;
   align-items:flex-start;
-  gap:16px;
-  padding:4px 24px;
+  gap:14px;
+  padding:8px 20px;
   border-left:1px solid var(--border);
 }
 .benefit-item:first-child{border-left:none;}
 .benefit-icon{
   flex:none;
-  width:52px;
-  height:52px;
+  width:50px;
+  height:50px;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:22px;
+  font-size:20px;
   font-weight:700;
   font-style:normal;
   background:var(--icon-bg);
   color:var(--primary-dark);
 }
-.benefit-text p:first-of-type{font-size:16px;font-weight:700;color:var(--heading);margin-bottom:6px;line-height:1.3;}
-.benefit-text p:last-of-type{font-size:14px;color:var(--muted);line-height:1.5;}
+.benefit-text{flex:1;min-width:0;}
+.benefit-text p:first-of-type{font-size:19px;font-weight:700;color:var(--heading);margin-bottom:6px;line-height:1.25;}
+.benefit-text p:last-of-type{
+  font-size:15px;
+  color:var(--muted);
+  line-height:1.4;
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
 
 /* ---------- Tantangan ---------- */
 .tantangan{padding:75px 0;}
