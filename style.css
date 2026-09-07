@@ -753,6 +753,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
 }
 .faq-question-text{
   flex:1;
+  font-family:inherit;
   font-size:16px;
   font-weight:600;
   color:var(--heading);
