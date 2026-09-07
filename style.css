@@ -452,6 +452,12 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   color:var(--heading);
   letter-spacing:-.3px;
 }
+.produk-heading p{
+  font-size:15px;
+  line-height:1.6;
+  color:var(--muted);
+  margin-top:12px;
+}
 
 .produk-grid{
   display:grid;
@@ -496,27 +502,294 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   font-size:18px;
   font-weight:700;
   color:var(--heading);
-  margin-bottom:14px;
+  margin-bottom:10px;
   letter-spacing:-.1px;
 }
-.produk-spec-label{
-  display:block;
+.produk-desc{
+  font-size:14px;
+  line-height:1.65;
+  color:var(--muted);
+  margin-bottom:20px;
+}
+.produk-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:10px 18px;
+  border:1px solid var(--primary);
+  border-radius:var(--radius-sm);
+  color:var(--primary);
+  font-size:14px;
+  font-weight:600;
+  transition:background-color .2s ease, color .2s ease;
+}
+.produk-link:hover{background:var(--primary);color:var(--white);}
+
+/* ---------- Artikel Terbaru ---------- */
+.artikel-terbaru{padding:70px 0;}
+.artikel-heading{max-width:640px;margin:0 auto 40px;text-align:center;}
+.artikel-heading h2{
+  font-size:30px;
+  font-weight:800;
+  line-height:1.25;
+  color:var(--heading);
+  letter-spacing:-.3px;
+}
+.artikel-heading p{
+  font-size:15px;
+  line-height:1.6;
+  color:var(--muted);
+  margin-top:12px;
+}
+
+.artikel-meta{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.artikel-category{
+  display:inline-block;
+  background:var(--icon-bg);
+  color:var(--primary);
   font-size:12px;
   font-weight:700;
-  color:var(--primary);
   text-transform:uppercase;
-  letter-spacing:.8px;
-  margin-bottom:10px;
+  letter-spacing:.6px;
+  padding:4px 12px;
+  border-radius:var(--radius-pill);
 }
-.produk-spec-list{list-style:none;margin:0;padding:0;}
-.produk-spec-list li{
-  font-size:14px;
-  line-height:1.8;
+.artikel-date{
+  position:relative;
+  padding-left:14px;
+  font-size:13px;
   color:var(--muted);
-  padding-block:2px;
-  border-top:1px solid var(--border);
 }
-.produk-spec-list li:first-child{border-top:none;}
+.artikel-date::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:50%;
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:var(--muted);
+  transform:translateY(-50%);
+}
+.artikel-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  color:var(--primary);
+  font-size:14px;
+  font-weight:600;
+  transition:gap .2s ease;
+}
+.artikel-link:hover{gap:10px;}
+
+.artikel-featured{
+  display:flex;
+  align-items:stretch;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-sm);
+  overflow:hidden;
+  margin-bottom:24px;
+}
+.artikel-featured-image{
+  display:block;
+  flex:0 0 48%;
+  min-height:380px;
+  overflow:hidden;
+  background:var(--bg-alt);
+}
+.artikel-featured-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s ease;
+}
+.artikel-featured:hover .artikel-featured-image img{transform:scale(1.04);}
+.artikel-featured-content{
+  flex:1;
+  min-width:0;
+  padding:40px 44px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.artikel-featured-content .artikel-title{
+  font-size:24px;
+  font-weight:700;
+  color:var(--heading);
+  letter-spacing:-.2px;
+  margin-bottom:12px;
+}
+.artikel-featured-content .artikel-title a{transition:color .2s ease;}
+.artikel-featured-content .artikel-title a:hover{color:var(--primary);}
+.artikel-featured-content .artikel-desc{
+  font-size:15px;
+  line-height:1.7;
+  color:var(--muted);
+  margin-bottom:20px;
+}
+
+.artikel-thumbs{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+.artikel-thumb{
+  display:flex;
+  align-items:stretch;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-sm);
+  overflow:hidden;
+  transition:box-shadow .3s ease, transform .3s ease;
+}
+.artikel-thumb:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+.artikel-thumb-image{
+  flex:0 0 42%;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  background:var(--bg-alt);
+}
+.artikel-thumb-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s ease;
+}
+.artikel-thumb:hover .artikel-thumb-image img{transform:scale(1.06);}
+.artikel-thumb-content{
+  flex:1;
+  min-width:0;
+  padding:22px 24px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.artikel-thumb-content .artikel-meta{margin-bottom:10px;}
+.artikel-thumb-content .artikel-title{
+  font-size:16px;
+  font-weight:700;
+  color:var(--heading);
+  letter-spacing:-.1px;
+  margin-bottom:8px;
+}
+.artikel-thumb-content .artikel-title a{transition:color .2s ease;}
+.artikel-thumb-content .artikel-title a:hover{color:var(--primary);}
+.artikel-thumb-content .artikel-desc{
+  font-size:14px;
+  line-height:1.6;
+  color:var(--muted);
+  margin-bottom:14px;
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+.artikel-cta{text-align:center;margin-top:40px;}
+
+/* ---------- FAQ ---------- */
+.faq{padding:80px 0;}
+.faq-heading{max-width:640px;margin:0 auto 40px;text-align:center;}
+.faq-label{
+  display:block;
+  color:var(--accent);
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  margin-bottom:6px;
+}
+.faq-heading h2{
+  font-size:30px;
+  font-weight:800;
+  line-height:1.25;
+  color:var(--heading);
+  letter-spacing:-.3px;
+}
+.faq-heading p{
+  font-size:15px;
+  line-height:1.6;
+  color:var(--muted);
+  margin-top:12px;
+}
+
+.faq-list{
+  max-width:820px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.faq-item{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-sm);
+  overflow:hidden;
+  transition:box-shadow .3s ease, border-color .3s ease;
+}
+.faq-item.is-open{border-color:var(--primary);box-shadow:var(--shadow-md);}
+.faq-question{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  width:100%;
+  padding:20px 24px;
+  background:none;
+  border:none;
+  text-align:left;
+  cursor:pointer;
+  font-family:var(--font);
+}
+.faq-number{
+  flex:none;
+  font-family:var(--font-heading);
+  font-size:15px;
+  font-weight:800;
+  color:var(--primary);
+}
+.faq-question-text{
+  flex:1;
+  font-size:16px;
+  font-weight:600;
+  color:var(--heading);
+  line-height:1.5;
+}
+.faq-icon{
+  flex:none;
+  position:relative;
+  width:22px;
+  height:22px;
+}
+.faq-icon::before,
+.faq-icon::after{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  background:var(--primary);
+  transform:translate(-50%,-50%);
+  transition:transform .25s ease;
+}
+.faq-icon::before{width:14px;height:2px;}
+.faq-icon::after{width:2px;height:14px;}
+.faq-item.is-open .faq-icon::after{transform:translate(-50%,-50%) rotate(90deg) scale(0);}
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .35s ease;
+}
+.faq-answer-inner{
+  padding:0 24px 22px 62px;
+}
+.faq-answer-inner p{
+  font-size:14px;
+  line-height:1.75;
+  color:var(--muted);
+}
 
 /* ---------- Alasan Memilih CMI ---------- */
 .alasan{padding:80px 0;}
@@ -784,9 +1057,25 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
 .solusi-grid .reveal:nth-child(3){transition-delay:240ms;}
 .solusi-grid .reveal:nth-child(4){transition-delay:360ms;}
 .produk-heading h2.reveal{transition-delay:150ms;}
+.produk-heading p.reveal{transition-delay:280ms;}
 .produk-grid .reveal:nth-child(1){transition-delay:0ms;}
 .produk-grid .reveal:nth-child(2){transition-delay:180ms;}
 .produk-grid .reveal:nth-child(3){transition-delay:360ms;}
+
+.artikel-heading h2.reveal{transition-delay:150ms;}
+.artikel-heading p.reveal{transition-delay:280ms;}
+.artikel-thumbs .reveal:nth-child(1){transition-delay:120ms;}
+.artikel-thumbs .reveal:nth-child(2){transition-delay:240ms;}
+
+.faq-heading h2.reveal{transition-delay:150ms;}
+.faq-heading p.reveal{transition-delay:280ms;}
+.faq-list .reveal:nth-child(1){transition-delay:0ms;}
+.faq-list .reveal:nth-child(2){transition-delay:80ms;}
+.faq-list .reveal:nth-child(3){transition-delay:160ms;}
+.faq-list .reveal:nth-child(4){transition-delay:240ms;}
+.faq-list .reveal:nth-child(5){transition-delay:320ms;}
+.faq-list .reveal:nth-child(6){transition-delay:400ms;}
+.faq-list .reveal:nth-child(7){transition-delay:480ms;}
 
 .alasan-intro .alasan-label.reveal{transition-delay:0ms;}
 .alasan-intro h2.reveal{transition-delay:120ms;}
@@ -808,6 +1097,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   .solusi-card,.solusi-image img,.solusi-number{transition:none;}
   .produk-card,.produk-image img{transition:none;}
   .produk-image img{opacity:1;transform:none;}
+  .artikel-featured,.artikel-thumb,.artikel-featured-image img,.artikel-thumb-image img{transition:none;}
+  .faq-item,.faq-answer,.faq-icon::before,.faq-icon::after{transition:none;}
   .alasan-timeline::before{transform:scaleY(1);transition:none;}
   .timeline-marker,.timeline-content p:first-of-type{transition:none;}
   .btn-cta{transition:none;}
@@ -859,6 +1150,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   .nav-dropdown a{padding:10px 16px;font-size:13.5px;}
 
   .hero{min-height:auto;padding-block:50px;}
+  .hero::before{background:linear-gradient(180deg,rgba(11,31,58,.93) 0%,rgba(11,31,58,.88) 100%);}
   .hero-content h1{font-size:32px;}
   .benefits-box{flex-direction:column;margin-top:-32px;}
   .benefit-item{border-left:none;border-top:1px solid var(--border);padding:16px 4px;}
@@ -876,6 +1168,14 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   .produk{padding:56px 0;}
   .produk-heading h2{font-size:26px;}
   .produk-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
+
+  .artikel-terbaru{padding:56px 0;}
+  .artikel-heading h2{font-size:26px;}
+  .artikel-featured-image{min-height:300px;}
+  .artikel-featured-content{padding:28px 30px;}
+  .artikel-featured-content .artikel-title{font-size:21px;}
+
+  .faq{padding:56px 0;}
 
   .alasan{padding:60px 0;}
   .alasan-grid{grid-template-columns:minmax(220px,36%) 1fr;gap:50px;}
@@ -909,6 +1209,24 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   .produk-heading{margin-bottom:32px;}
   .produk-heading h2{font-size:22px;}
   .produk-grid{grid-template-columns:1fr;gap:20px;}
+
+  .artikel-terbaru{padding:40px 0;}
+  .artikel-heading{margin-bottom:28px;}
+  .artikel-heading h2{font-size:22px;}
+  .artikel-featured{flex-direction:column;}
+  .artikel-featured-image{flex-basis:auto;min-height:0;aspect-ratio:4/3;}
+  .artikel-featured-content{padding:22px 20px 26px;}
+  .artikel-featured-content .artikel-title{font-size:19px;}
+  .artikel-thumbs{grid-template-columns:1fr;gap:16px;}
+  .artikel-thumb-content{padding:16px 18px;}
+  .artikel-thumb-content .artikel-desc{-webkit-line-clamp:2;}
+
+  .faq{padding:40px 0;}
+  .faq-heading{margin-bottom:28px;}
+  .faq-heading h2{font-size:22px;}
+  .faq-question{padding:16px 16px;gap:12px;}
+  .faq-question-text{font-size:15px;}
+  .faq-answer-inner{padding:0 16px 18px 44px;}
 
   .alasan{padding:44px 0;}
   .alasan-grid{grid-template-columns:1fr;gap:40px;}
