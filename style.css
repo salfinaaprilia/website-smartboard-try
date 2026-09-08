@@ -514,7 +514,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
 .produk-card.is-visible .produk-image img{opacity:1;transform:scale(1);}
 .produk-card:hover .produk-image img{transform:scale(1.06);}
 .produk-content{padding:22px 24px 26px;}
-.produk-content p:first-child{
+.produk-content p:first-child,
+.produk-content h2{
   font-size:18px;
   font-weight:700;
   color:var(--heading);
@@ -1044,6 +1045,46 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   text-align:left;
 }
 
+/* ---------- Product detail hero (e.g. smartboardzelt.html) ---------- */
+.product-hero{
+  background:linear-gradient(135deg, var(--primary-dark) 0%, #142c4e 100%);
+  color:var(--white);
+  padding:70px 0;
+}
+.product-hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+  align-items:center;
+}
+.product-hero-eyebrow{
+  display:block;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#9fc1e8;
+  margin-bottom:10px;
+}
+.product-hero-content h1{
+  font-size:42px;
+  font-weight:800;
+  line-height:1.15;
+  color:var(--white);
+  margin-bottom:20px;
+}
+.product-hero-image{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--radius-lg);
+  aspect-ratio:4/3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.product-hero-image img{width:100%;height:100%;object-fit:contain;padding:24px;}
+
 /* ---------- Kontak Kami page ---------- */
 .page-hero{padding:64px 0 48px;text-align:center;background:var(--bg-alt);}
 .page-hero h1{
@@ -1145,6 +1186,9 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
 .produk-grid .reveal:nth-child(1){transition-delay:0ms;}
 .produk-grid .reveal:nth-child(2){transition-delay:180ms;}
 .produk-grid .reveal:nth-child(3){transition-delay:360ms;}
+.produk-grid .reveal:nth-child(4){transition-delay:0ms;}
+.produk-grid .reveal:nth-child(5){transition-delay:180ms;}
+.produk-grid .reveal:nth-child(6){transition-delay:360ms;}
 
 .artikel-heading h2.reveal{transition-delay:150ms;}
 .artikel-heading p.reveal{transition-delay:280ms;}
@@ -1276,6 +1320,11 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   .page-hero h1{font-size:30px;}
   .kontak-section{padding:48px 0;}
   .kontak-grid{grid-template-columns:1fr;gap:32px;}
+
+  .product-hero{padding:48px 0;}
+  .product-hero-grid{grid-template-columns:1fr;gap:32px;text-align:center;}
+  .product-hero-image{max-width:420px;margin:0 auto;}
+  .product-hero-content h1{font-size:34px;}
 }
 
 @media (max-width:640px){
@@ -1341,4 +1390,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   .kontak-section{padding:40px 0;}
   .kontak-card{padding:18px;gap:12px;}
   .kontak-whatsapp-btn{width:100%;justify-content:center;}
+
+  .product-hero{padding:40px 0;}
+  .product-hero-content h1{font-size:28px;}
+  .product-hero-content .hero-buttons{justify-content:center;}
 }
