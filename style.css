@@ -1058,16 +1058,24 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
 
 /* ---------- Product detail hero (e.g. smartboardzelt.html) ---------- */
 .product-hero{
-  background-image:linear-gradient(rgba(11,31,58,.78), rgba(11,31,58,.78)), url('images/produk-smart-board-zelt.png');
-  background-size:cover;
-  background-position:center;
+  position:relative;
+  overflow:hidden;
+  background:var(--primary-dark);
   color:var(--white);
   padding:70px 0;
   min-height:557px;
   display:flex;
   align-items:center;
 }
-.product-hero-content{max-width:600px;}
+.product-hero-grid{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:45fr 55fr;
+  gap:56px;
+  align-items:center;
+  width:100%;
+}
 .product-hero-eyebrow{
   display:block;
   font-size:14px;
@@ -1083,6 +1091,16 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   line-height:1.15;
   color:var(--white);
   margin-bottom:20px;
+}
+.product-hero-image{display:flex;}
+.product-hero-image img{
+  width:100%;
+  height:auto;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  object-position:63% 47%;
+  border-radius:var(--radius-lg);
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.08);
 }
 
 /* ---------- Product category tabs (e.g. smartboardzelt.html) ---------- */
@@ -1342,8 +1360,11 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   .kontak-section{padding:48px 0;}
   .kontak-grid{grid-template-columns:1fr;gap:32px;}
 
-  .product-hero{padding:48px 0;min-height:420px;}
+  .product-hero{padding:48px 0;min-height:auto;}
+  .product-hero-grid{grid-template-columns:1fr;gap:32px;text-align:center;}
+  .product-hero-image{max-width:420px;margin:0 auto;}
   .product-hero-content h1{font-size:34px;}
+  .product-hero-content .hero-buttons{justify-content:center;}
 }
 
 @media (max-width:640px){
@@ -1410,7 +1431,6 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   .kontak-card{padding:18px;gap:12px;}
   .kontak-whatsapp-btn{width:100%;justify-content:center;}
 
-  .product-hero{padding:40px 0;min-height:340px;}
+  .product-hero{padding:40px 0;}
   .product-hero-content h1{font-size:28px;}
-  .product-hero-content .hero-buttons{justify-content:center;}
 }
