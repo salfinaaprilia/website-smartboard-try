@@ -147,6 +147,17 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   transform:translateY(0);
 }
 @media (min-width:992px){
+  /* Bridges the 10px visual gap between the toggle and the dropdown so the
+     mouse never leaves a hoverable element while moving from one to the
+     other — without this, the dropdown can close before a click lands. */
+  .has-dropdown::after{
+    content:'';
+    position:absolute;
+    left:0;
+    top:100%;
+    width:240px;
+    height:10px;
+  }
   .has-dropdown:hover .nav-dropdown{
     opacity:1;
     visibility:visible;
