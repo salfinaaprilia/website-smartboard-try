@@ -72,6 +72,15 @@
     });
   });
 
+  // Product category tabs (e.g. smartboardzelt.html): highlight the clicked series
+  var categoryTabs = document.querySelectorAll('.category-tab');
+  categoryTabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      categoryTabs.forEach(function (t) { t.classList.remove('is-active'); });
+      tab.classList.add('is-active');
+    });
+  });
+
   // Article table of contents, auto-generated from h2/h3 in the article body
   var articleContent = document.getElementById('articleContent');
   var tocList = document.getElementById('articleTocList');
