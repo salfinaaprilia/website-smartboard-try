@@ -229,25 +229,36 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
 /* ---------- Hero ---------- */
 .hero{
   position:relative;
-  min-height:650px;
+  min-height:680px;
   overflow:hidden;
   display:flex;
   align-items:center;
   color:var(--white);
+  background:var(--primary-dark);
+}
+.hero-media{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:38%;
+  right:0;
+  z-index:0;
 }
 .hero-bg-image{
-  position:absolute;
-  inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
-  z-index:0;
+  display:block;
+  opacity:0;
+  transform:scale(1.06);
+  transition:opacity .9s ease, transform 1.1s ease;
 }
+.hero-bg-image.is-visible{opacity:1;transform:scale(1);}
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(90deg,rgba(11,31,58,.95) 0%,rgba(11,31,58,.75) 25%,rgba(11,31,58,.4) 50%,rgba(11,31,58,.08) 75%,rgba(11,31,58,0) 100%);
+  background:linear-gradient(90deg,var(--primary-dark) 0%,var(--primary-dark) 42%,rgba(11,31,58,.6) 52%,rgba(11,31,58,0) 68%);
   z-index:1;
 }
 .hero .container{position:relative;z-index:2;}
@@ -1461,6 +1472,10 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
 .cta-label.reveal.is-visible,
 .cta-container h2.reveal.is-visible,
 .cta-container p.reveal.is-visible{transform:translateY(0);}
+.hero-content h1.reveal{transition-delay:0ms;}
+.hero-content .hero-desc.reveal{transition-delay:150ms;}
+.hero-buttons .reveal:nth-child(1){transition-delay:300ms;}
+.hero-buttons .reveal:nth-child(2){transition-delay:380ms;}
 .footer-brand.reveal{transition-delay:0ms;}
 .footer-links.reveal{transition-delay:130ms;}
 .footer-contact.reveal{transition-delay:260ms;}
@@ -1572,6 +1587,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   .nav-dropdown a{padding:10px 16px;font-size:13.5px;}
 
   .hero{min-height:auto;padding-block:50px;}
+  .hero-media{left:0;}
   .hero::before{background:linear-gradient(180deg,rgba(11,31,58,.93) 0%,rgba(11,31,58,.88) 100%);}
   .hero-content h1{font-size:32px;}
   .benefits-box{flex-direction:column;margin-top:-32px;}
