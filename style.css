@@ -1675,6 +1675,20 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
     background:linear-gradient(180deg, rgba(11,31,58,.9) 0%, rgba(11,31,58,.88) 60%, rgba(11,31,58,.7) 100%);
   }
 
+  .category-tabs-bar{padding:12px 0 8px;}
+  .category-tabs-label{font-size:10px;margin-bottom:8px;}
+  .category-tabs{
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+    overflow-x:auto;
+    gap:10px;
+    margin:0 -16px;
+    padding:0 16px 4px;
+    scrollbar-width:none;
+  }
+  .category-tabs::-webkit-scrollbar{display:none;}
+  .category-tab{flex:none;padding:9px 18px;font-size:13px;white-space:nowrap;}
+
   .breadcrumb{padding:14px 0;}
   .article-hero{padding:32px 0 24px;}
   .article-title{font-size:24px;}
