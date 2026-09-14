@@ -1172,6 +1172,59 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
 #lite-series,
 #accessories{scroll-margin-top:100px;}
 
+/* ---------- Product detail page (e.g. zelt-pro-65-inch.html) ---------- */
+.produk-detail-hero{padding:48px 0 70px;}
+.produk-detail-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:56px;
+  align-items:center;
+}
+.produk-detail-image{
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  background:var(--bg-alt);
+  border:1px solid var(--border);
+  aspect-ratio:4/3;
+}
+.produk-detail-image img{width:100%;height:100%;object-fit:contain;display:block;}
+.produk-detail-category{
+  display:inline-block;
+  color:var(--accent);
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1.2px;
+  margin-bottom:14px;
+}
+.produk-detail-info h1{
+  font-size:34px;
+  font-weight:800;
+  line-height:1.2;
+  color:var(--heading);
+  letter-spacing:-.4px;
+  margin-bottom:18px;
+}
+.produk-detail-desc{
+  font-size:16px;
+  line-height:1.6;
+  color:var(--muted);
+  max-width:480px;
+  margin-bottom:32px;
+}
+
+.produk-spec{padding-bottom:80px;}
+.spec-table{
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+}
+.spec-row{display:grid;grid-template-columns:240px 1fr;}
+.spec-row:nth-child(even){background:var(--bg-alt);}
+.spec-row:not(:last-child){border-bottom:1px solid var(--border);}
+.spec-label{padding:14px 22px;font-weight:600;color:var(--heading);font-size:14.5px;}
+.spec-value{padding:14px 22px;color:var(--text);font-size:14.5px;}
+
 /* ---------- Kontak Kami page ---------- */
 .page-hero{padding:64px 0 48px;text-align:center;background:var(--bg-alt);}
 .page-hero h1{
@@ -1644,6 +1697,11 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   .article-sidebar{order:-1;}
   .article-toc{position:static;}
   .article-cta{padding:24px;}
+
+  .produk-detail-hero{padding:36px 0 56px;}
+  .produk-detail-grid{grid-template-columns:1fr;gap:32px;}
+  .produk-detail-info h1{font-size:28px;}
+  .spec-row{grid-template-columns:180px 1fr;}
   .article-related{padding:56px 0;}
   .article-related-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
 }
@@ -1735,6 +1793,14 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   .category-tab{flex:none;padding:9px 18px;font-size:13px;white-space:nowrap;}
 
   .breadcrumb{padding:14px 0;}
+
+  .produk-detail-hero{padding:28px 0 44px;}
+  .produk-detail-info h1{font-size:24px;}
+  .produk-detail-desc{font-size:15px;}
+  .produk-spec{padding-bottom:56px;}
+  .spec-row{grid-template-columns:1fr;}
+  .spec-row .spec-value{padding-top:0;}
+
   .article-hero{padding:32px 0 24px;}
   .article-title{font-size:24px;}
   .article-excerpt{font-size:15.5px;}
