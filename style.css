@@ -536,6 +536,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
 .produk-card.is-visible .produk-image img{opacity:1;transform:scale(1);}
 .produk-image--square{aspect-ratio:1/1;}
 .produk-image--square img{padding:28px;}
+.produk-image--board{aspect-ratio:3/2;}
+.produk-image--board img{object-fit:cover;padding:0;}
 .produk-card:hover .produk-image img{transform:scale(1.06);}
 .produk-content{padding:22px 24px 26px;}
 .produk-content p:first-child,
@@ -1202,6 +1204,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   top:100px;
 }
 .produk-detail-image img{width:100%;height:100%;object-fit:contain;display:block;}
+.produk-detail-image--board{padding:0;}
+.produk-detail-image--board img{object-fit:cover;}
 .produk-detail-category{
   display:inline-block;
   color:var(--accent);
