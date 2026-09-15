@@ -534,6 +534,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   transition:opacity .6s ease, transform .6s ease;
 }
 .produk-card.is-visible .produk-image img{opacity:1;transform:scale(1);}
+.produk-image--square{aspect-ratio:1/1;}
+.produk-image--square img{padding:28px;}
 .produk-card:hover .produk-image img{transform:scale(1.06);}
 .produk-content{padding:22px 24px 26px;}
 .produk-content p:first-child,
