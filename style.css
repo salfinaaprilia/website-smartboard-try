@@ -1317,7 +1317,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   color:var(--muted);
 }
 
-/* ---------- Artikel section (portofolio.html) ---------- */
+/* ---------- Artikel section (artikel.html) ---------- */
 .artikel-showcase{padding:70px 0;}
 .artikel-showcase-heading{max-width:640px;margin:0 auto 48px;text-align:center;}
 .artikel-showcase-label{
@@ -1375,7 +1375,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
 
 .artikel-showcase-featured{
   display:flex;
-  align-items:stretch;
+  flex-direction:column;
   background:var(--white);
   border:1px solid var(--border);
   border-radius:var(--radius-lg);
@@ -1385,8 +1385,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
 }
 .artikel-showcase-featured-image{
   display:block;
-  flex:0 0 50%;
-  min-height:420px;
+  width:100%;
+  aspect-ratio:21/9;
   overflow:hidden;
   background:var(--bg-alt);
 }
@@ -1394,16 +1394,12 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   width:100%;
   height:100%;
   object-fit:cover;
+  display:block;
   transition:transform .5s ease;
 }
 .artikel-showcase-featured:hover .artikel-showcase-featured-image img{transform:scale(1.04);}
 .artikel-showcase-featured-content{
-  flex:1;
-  min-width:0;
-  padding:44px 48px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+  padding:36px 40px 40px;
 }
 .artikel-showcase-featured-content h3{
   font-size:26px;
@@ -1914,8 +1910,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   .artikel-showcase{padding:56px 0;}
   .artikel-showcase-heading{margin-bottom:36px;}
   .artikel-showcase-heading h2{font-size:26px;}
-  .artikel-showcase-featured-image{min-height:320px;}
-  .artikel-showcase-featured-content{padding:32px 34px;}
+  .artikel-showcase-featured-image{aspect-ratio:16/8;}
+  .artikel-showcase-featured-content{padding:30px 32px 34px;}
   .artikel-showcase-featured-content h3{font-size:22px;}
   .artikel-showcase-grid{grid-template-columns:repeat(2,1fr);gap:22px;}
 
@@ -1993,8 +1989,8 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   .artikel-showcase{padding:40px 0;}
   .artikel-showcase-heading{margin-bottom:28px;}
   .artikel-showcase-heading h2{font-size:22px;}
-  .artikel-showcase-featured{flex-direction:column;margin-bottom:24px;}
-  .artikel-showcase-featured-image{flex-basis:auto;min-height:0;aspect-ratio:4/3;}
+  .artikel-showcase-featured{margin-bottom:24px;}
+  .artikel-showcase-featured-image{aspect-ratio:4/3;}
   .artikel-showcase-featured-content{padding:24px 20px 28px;}
   .artikel-showcase-featured-content h3{font-size:20px;}
   .artikel-showcase-grid{grid-template-columns:1fr;gap:18px;}
