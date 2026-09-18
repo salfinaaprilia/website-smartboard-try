@@ -1886,7 +1886,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
 
   .hero{min-height:auto;padding-block:50px;}
   .hero-media{left:0;}
-  .hero::before{background:linear-gradient(180deg,rgba(11,31,58,.93) 0%,rgba(11,31,58,.88) 100%);}
+  .hero::before{background:linear-gradient(180deg,rgba(11,31,58,.95) 0%,rgba(11,31,58,.92) 100%);}
   .hero-content h1{font-size:32px;}
   .benefits-box{flex-direction:column;margin-top:-32px;}
   .benefit-item{border-left:none;border-top:1px solid var(--border);padding:16px 4px;}
