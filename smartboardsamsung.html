@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -26,7 +26,7 @@
             <span class="nav-caret" aria-hidden="true"></span>
           </button>
           <ul class="nav-dropdown" id="produkDropdown">
-            <li><a href="index.html#produk-hikvision">Smart Board Hikvision</a></li>
+            <li><a href="smartboardhikvision.html">Smart Board Hikvision</a></li>
             <li><a href="smartboardzelt.html">Smart Board Zelt</a></li>
             <li><a href="smartboardsamsung.html">Smart Board Samsung</a></li>
           </ul>
@@ -90,7 +90,7 @@
 
           <div class="produk-card reveal">
             <div class="produk-image">
-              <img src="images/Smart-Board-Samsung-Flip-WM55B.png" alt="Samsung Flip WM55B" width="559" height="447" loading="lazy">
+              <img src="images/samsung-flip-wmb.png" alt="Samsung Flip WM55B" width="559" height="447" loading="lazy">
             </div>
             <div class="produk-content">
               <h2>Samsung Flip WM55B</h2>
@@ -101,7 +101,7 @@
 
           <div class="produk-card reveal">
             <div class="produk-image">
-              <img src="images/Smart-Board-Samsung-Flip-WM65B.png" alt="Samsung Flip WM65B" width="559" height="447" loading="lazy">
+              <img src="images/samsung-flip-wmb.png" alt="Samsung Flip WM65B" width="559" height="447" loading="lazy">
             </div>
             <div class="produk-content">
               <h2>Samsung Flip WM65B</h2>
@@ -112,7 +112,7 @@
 
           <div class="produk-card reveal">
             <div class="produk-image">
-              <img src="images/Smart-Board-Samsung-Flip-WM75B.png" alt="Samsung Flip WM75B" width="559" height="447" loading="lazy">
+              <img src="images/samsung-flip-wmb.png" alt="Samsung Flip WM75B" width="559" height="447" loading="lazy">
             </div>
             <div class="produk-content">
               <h2>Samsung Flip WM75B</h2>
@@ -140,7 +140,7 @@
 
           <div class="produk-card reveal">
             <div class="produk-image">
-              <img src="images/Smart-Board-Samsung-WA65D.png" alt="Samsung Flip WA65D" width="500" height="500" loading="lazy">
+              <img src="images/samsung-wad.png" alt="Samsung Flip WA65D" width="500" height="500" loading="lazy">
             </div>
             <div class="produk-content">
               <h2>Samsung Flip WA65D</h2>
@@ -151,7 +151,7 @@
 
           <div class="produk-card reveal">
             <div class="produk-image">
-              <img src="images/Smart-Board-Samsung-WA75D.png" alt="Samsung Flip WA75D" width="500" height="500" loading="lazy">
+              <img src="images/samsung-wad.png" alt="Samsung Flip WA75D" width="500" height="500" loading="lazy">
             </div>
             <div class="produk-content">
               <h2>Samsung Flip WA75D</h2>
@@ -162,7 +162,7 @@
 
           <div class="produk-card reveal">
             <div class="produk-image">
-              <img src="images/Smart-Board-Samsung-WA86D.png" alt="Samsung Flip WA86D" width="500" height="500" loading="lazy">
+              <img src="images/samsung-wad.png" alt="Samsung Flip WA86D" width="500" height="500" loading="lazy">
             </div>
             <div class="produk-content">
               <h2>Samsung Flip WA86D</h2>
@@ -278,26 +278,8 @@
 (function () {
   'use strict';
 
-  var PLACEHOLDER = 'Segera diperbarui';
-
-  function wmbSpecs(size) {
-    return [
-      ['Size', size + ' Inch'],
-      ['Panel Type', PLACEHOLDER],
-      ['Resolution', PLACEHOLDER],
-      ['Konektivitas', PLACEHOLDER]
-    ];
-  }
-
-  function wadSpecs(size) {
-    return [
-      ['Size', size + ' Inch'],
-      ['Panel Type', PLACEHOLDER],
-      ['Resolution', PLACEHOLDER],
-      ['Operating System', PLACEHOLDER],
-      ['Konektivitas', PLACEHOLDER],
-      ['Speaker', PLACEHOLDER]
-    ];
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
   }
 
   var PRODUCTS = {
@@ -305,47 +287,119 @@
       category: 'Smart Board Samsung Flip WMB',
       name: 'Samsung Flip WM55B',
       image: 'images/Smart-Board-Samsung-Flip-WM55B.png',
-      specs: wmbSpecs(55)
+      specs: [
+        ['Size', '55 Inch'],
+        ['Panel Type', 'VA (New Edge), 60Hz'],
+        ['Resolution', '3840 x 2160 (4K UHD)'],
+        ['Brightness', '350 nit (without glass)'],
+        ['Contrast Ratio', '4000:1'],
+        ['Touch', 'Infrared (IR), Up to 20 Points'],
+        ['Operating System', 'Tizen 6.5'],
+        ['Processor', 'Quad-Core 1.7GHz'],
+        ['Storage', '32 GB'],
+        ['Speaker', '10W x 2CH (Built-in)'],
+        ['Connectivity', 'HDMI, DisplayPort, USB-C, USB, RJ45, Wi-Fi/Bluetooth']
+      ]
     },
     'wm65b': {
       category: 'Smart Board Samsung Flip WMB',
       name: 'Samsung Flip WM65B',
       image: 'images/Smart-Board-Samsung-Flip-WM65B.png',
-      specs: wmbSpecs(65)
+      specs: [
+        ['Size', '65 Inch'],
+        ['Panel Type', 'VA (New Edge), 60Hz'],
+        ['Resolution', '3840 x 2160 (4K UHD)'],
+        ['Brightness', '350 nit (without glass)'],
+        ['Contrast Ratio', '4000:1'],
+        ['Touch', 'Infrared (IR), Up to 20 Points'],
+        ['Operating System', 'Tizen 6.5'],
+        ['Processor', 'Quad-Core 1.7GHz'],
+        ['Storage', '32 GB'],
+        ['Speaker', '10W x 2CH (Built-in)'],
+        ['Connectivity', 'HDMI, DisplayPort, USB-C, USB, RJ45, Wi-Fi/Bluetooth']
+      ]
     },
     'wm75b': {
       category: 'Smart Board Samsung Flip WMB',
       name: 'Samsung Flip WM75B',
       image: 'images/Smart-Board-Samsung-Flip-WM75B.png',
-      specs: wmbSpecs(75)
+      specs: [
+        ['Size', '75 Inch'],
+        ['Panel Type', 'VA (New Edge), 60Hz'],
+        ['Resolution', '3840 x 2160 (4K UHD)'],
+        ['Brightness', '350 nit (without glass)'],
+        ['Contrast Ratio', '4000:1'],
+        ['Touch', 'Infrared (IR), Up to 20 Points'],
+        ['Operating System', 'Tizen 6.5'],
+        ['Processor', 'Quad-Core 1.7GHz'],
+        ['Storage', '32 GB'],
+        ['Speaker', '4CH, 40W Total (Built-in)'],
+        ['Connectivity', 'HDMI, DisplayPort, USB-C, USB, RJ45, Wi-Fi/Bluetooth']
+      ]
     },
     'wa65d': {
       category: 'Smart Board Samsung Flip WAD',
       name: 'Samsung Flip WA65D',
       image: 'images/Smart-Board-Samsung-WA65D.png',
-      specs: wadSpecs(65)
+      specs: [
+        ['Size', '65 Inch'],
+        ['Panel Type', 'Direct LED, 60Hz'],
+        ['Resolution', '3840 x 2160 (4K UHD)'],
+        ['Brightness', '400 nit'],
+        ['Contrast Ratio', '1200:1'],
+        ['Touch', 'Infrared (IR), Up to 40 Points'],
+        ['Operating System', 'Android 13 (EDLA Certified)'],
+        ['RAM', '8 GB'],
+        ['Storage', '64 GB'],
+        ['Speaker', '15W x 2CH (Built-in)'],
+        ['Connectivity', 'HDMI, USB-C, USB, RJ45, Wi-Fi/Bluetooth']
+      ]
     },
     'wa75d': {
       category: 'Smart Board Samsung Flip WAD',
       name: 'Samsung Flip WA75D',
       image: 'images/Smart-Board-Samsung-WA75D.png',
-      specs: wadSpecs(75)
+      specs: [
+        ['Size', '75 Inch'],
+        ['Panel Type', 'Direct LED, 60Hz'],
+        ['Resolution', '3840 x 2160 (4K UHD)'],
+        ['Brightness', '400 nit'],
+        ['Contrast Ratio', '1200:1'],
+        ['Touch', 'Infrared (IR), Up to 40 Points'],
+        ['Operating System', 'Android 13 (EDLA Certified)'],
+        ['RAM', '8 GB'],
+        ['Storage', '64 GB'],
+        ['Speaker', '15W x 2CH (Built-in)'],
+        ['Connectivity', 'HDMI, USB-C, USB, RJ45, Wi-Fi/Bluetooth']
+      ]
     },
     'wa86d': {
       category: 'Smart Board Samsung Flip WAD',
       name: 'Samsung Flip WA86D',
       image: 'images/Smart-Board-Samsung-WA86D.png',
-      specs: wadSpecs(86)
+      specs: [
+        ['Size', '86 Inch'],
+        ['Panel Type', 'Direct LED, 60Hz'],
+        ['Resolution', '3840 x 2160 (4K UHD)'],
+        ['Brightness', '400 nit'],
+        ['Contrast Ratio', '1200:1'],
+        ['Touch', 'Infrared (IR), Up to 40 Points'],
+        ['Operating System', 'Android 13 (EDLA Certified)'],
+        ['RAM', '8 GB'],
+        ['Storage', '64 GB'],
+        ['Speaker', '15W x 2CH (Built-in)'],
+        ['Connectivity', 'HDMI, USB-C, USB, RJ45, Wi-Fi/Bluetooth']
+      ]
     },
     'wall-mount': {
       category: 'Aksesoris Samsung',
       name: 'Wall Mount Samsung',
       image: 'images/Wall Mount Samsung.png',
       specs: [
-        ['Type', 'Bracket Dinding'],
-        ['Kompatibilitas', PLACEHOLDER],
-        ['Material', PLACEHOLDER],
-        ['Kapasitas Beban', PLACEHOLDER]
+        ['Type', 'Wall Mount Bracket'],
+        ['Kompatibilitas', 'Samsung Flip Pro (WMB) & Interactive Display (WAD) Series'],
+        ['VESA', '400x400 / 600x400 / 800x400 / 800x600 mm'],
+        ['Material', 'Steel']
       ]
     },
     'mobile-stand': {
@@ -353,10 +407,9 @@
       name: 'Mobile Stand Samsung',
       image: 'images/Mobile Stand Samsung.png',
       specs: [
-        ['Type', 'Mobile Stand Beroda'],
-        ['Kompatibilitas', PLACEHOLDER],
-        ['Material', PLACEHOLDER],
-        ['Pengaturan Ketinggian', PLACEHOLDER]
+        ['Type', 'Mobile Stand Beroda, Height-Adjustable'],
+        ['Kompatibilitas', 'Samsung Flip Pro (WMB) & Interactive Display (WAD) Series via VESA'],
+        ['Roda', '4 Caster Wheels (Lockable)']
       ]
     },
     'ops-pc': {
@@ -364,10 +417,11 @@
       name: 'OPS PC Samsung',
       image: 'images/OPS PC Samsung.png',
       specs: [
-        ['Type', 'Modul PC OPS'],
-        ['Processor', PLACEHOLDER],
-        ['RAM', PLACEHOLDER],
-        ['Storage', PLACEHOLDER]
+        ['Type', 'Samsung SBB-PB32EV4 OPS Module'],
+        ['Processor', 'AMD RX425BB 2.5GHz Quad-Core'],
+        ['RAM', '4 GB'],
+        ['Storage', '32 GB SSD'],
+        ['Operating System', 'Windows 7 Embedded']
       ]
     }
   };
@@ -433,25 +487,39 @@
 
     catalogEl.hidden = true;
     detailEl.hidden = false;
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }
+
+  var savedScrollY = 0;
 
   function showCatalog() {
     detailEl.hidden = true;
     detailEl.innerHTML = '';
     catalogEl.hidden = false;
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: savedScrollY, left: 0, behavior: 'instant' });
   }
 
   document.addEventListener('click', function (e) {
     var trigger = e.target.closest('[data-samsung-detail]');
     if (trigger) {
-      renderDetail(trigger.getAttribute('data-samsung-detail'));
+      var key = trigger.getAttribute('data-samsung-detail');
+      savedScrollY = window.scrollY;
+      history.pushState({ samsungDetail: key }, '', '#' + key);
+      renderDetail(key);
       return;
     }
     var back = e.target.closest('[data-samsung-back]');
     if (back) {
       e.preventDefault();
+      history.back();
+    }
+  });
+
+  window.addEventListener('popstate', function (e) {
+    var state = e.state;
+    if (state && state.samsungDetail) {
+      renderDetail(state.samsungDetail);
+    } else {
       showCatalog();
     }
   });

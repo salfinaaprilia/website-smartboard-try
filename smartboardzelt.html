@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -90,7 +90,7 @@
 
           <div class="produk-card reveal">
             <div class="produk-image">
-              <img src="images/zelt-pro-65-inch.png" alt="ZELT Pro 65 inch" width="688" height="363" loading="lazy">
+              <img src="images/zelt-lite-pro.png" alt="ZELT Pro 65 inch" width="688" height="363" loading="lazy">
             </div>
             <div class="produk-content">
               <h2>ZELT Pro 65 Inch</h2>
@@ -101,7 +101,7 @@
 
           <div class="produk-card reveal">
             <div class="produk-image">
-              <img src="images/zelt-pro-75-inch.png" alt="ZELT Pro 75 inch" width="688" height="363" loading="lazy">
+              <img src="images/zelt-lite-pro.png" alt="ZELT Pro 75 inch" width="688" height="363" loading="lazy">
             </div>
             <div class="produk-content">
               <h2>ZELT Pro 75 Inch</h2>
@@ -112,7 +112,7 @@
 
           <div class="produk-card reveal">
             <div class="produk-image">
-              <img src="images/zelt-pro-85-inch.png" alt="ZELT Pro 85 inch" width="688" height="363" loading="lazy">
+              <img src="images/zelt-lite-pro.png" alt="ZELT Pro 85 inch" width="688" height="363" loading="lazy">
             </div>
             <div class="produk-content">
               <h2>ZELT Pro 85 Inch</h2>
@@ -123,7 +123,7 @@
 
           <div class="produk-card reveal">
             <div class="produk-image">
-              <img src="images/zelt-pro-98-inch.png" alt="ZELT Pro 98 inch" width="688" height="363" loading="lazy">
+              <img src="images/zelt-lite-pro.png" alt="ZELT Pro 98 inch" width="688" height="363" loading="lazy">
             </div>
             <div class="produk-content">
               <h2>ZELT Pro 98 Inch</h2>
@@ -134,7 +134,7 @@
 
           <div class="produk-card reveal">
             <div class="produk-image">
-              <img src="images/zelt-pro-103-inch.png" alt="ZELT Pro 103 inch" width="688" height="363" loading="lazy">
+              <img src="images/zelt-lite-pro.png" alt="ZELT Pro 103 inch" width="688" height="363" loading="lazy">
             </div>
             <div class="produk-content">
               <h2>ZELT Pro 103 Inch</h2>
@@ -145,7 +145,7 @@
 
           <div class="produk-card reveal">
             <div class="produk-image">
-              <img src="images/zelt-pro-105-inch.png" alt="ZELT Pro 105 inch" width="688" height="363" loading="lazy">
+              <img src="images/zelt-lite-pro.png" alt="ZELT Pro 105 inch" width="688" height="363" loading="lazy">
             </div>
             <div class="produk-content">
               <h2>ZELT Pro 105 Inch</h2>
@@ -173,7 +173,7 @@
 
           <div class="produk-card reveal">
             <div class="produk-image">
-              <img src="images/zelt-lite-65-inch.png" alt="ZELT Lite 65 inch" width="688" height="363" loading="lazy">
+              <img src="images/zelt-lite-pro.png" alt="ZELT Lite 65 inch" width="688" height="363" loading="lazy">
             </div>
             <div class="produk-content">
               <h2>ZELT Lite 65 Inch</h2>
@@ -184,7 +184,7 @@
 
           <div class="produk-card reveal">
             <div class="produk-image">
-              <img src="images/zelt-lite-75-inch.png" alt="ZELT Lite 75 inch" width="688" height="363" loading="lazy">
+              <img src="images/zelt-lite-pro.png" alt="ZELT Lite 75 inch" width="688" height="363" loading="lazy">
             </div>
             <div class="produk-content">
               <h2>ZELT Lite 75 Inch</h2>
@@ -195,7 +195,7 @@
 
           <div class="produk-card reveal">
             <div class="produk-image">
-              <img src="images/zelt-lite-85-inch.png" alt="ZELT Lite 85 inch" width="688" height="363" loading="lazy">
+              <img src="images/zelt-lite-pro.png" alt="ZELT Lite 85 inch" width="688" height="363" loading="lazy">
             </div>
             <div class="produk-content">
               <h2>ZELT Lite 85 Inch</h2>
@@ -311,12 +311,17 @@
 (function () {
   'use strict';
 
-  var PLACEHOLDER = 'Segera diperbarui';
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
 
-  function proSpecs(size, full) {
-    if (full) {
-      return [
-        ['Size', size + ' Inch'],
+  var PRODUCTS = {
+    'zelt-pro-65-inch': {
+      category: 'Smart Board ZELT Pro',
+      name: 'ZELT Pro 65 Inch',
+      image: 'images/zelt-lite-pro.png',
+      specs: [
+        ['Size', '65 Inch'],
         ['Panel Type', 'D-LED'],
         ['Resolution', '4K UHD'],
         ['Glass Panel', 'Non-Glare w/ Zero Bonding'],
@@ -331,101 +336,183 @@
         ['NPU', '6-TOPS'],
         ['RAM', '16GB'],
         ['ROM', '256GB']
-      ];
-    }
-    return [
-      ['Size', size + ' Inch'],
-      ['Panel Type', PLACEHOLDER],
-      ['Resolution', PLACEHOLDER],
-      ['Glass Panel', PLACEHOLDER],
-      ['Contrast Ratio', PLACEHOLDER],
-      ['Hardened Glass', PLACEHOLDER],
-      ['Dynamic Ratio', PLACEHOLDER],
-      ['Brightness', PLACEHOLDER],
-      ['Support OS', PLACEHOLDER],
-      ['Speaker', PLACEHOLDER],
-      ['CPU', PLACEHOLDER],
-      ['GPU', PLACEHOLDER],
-      ['NPU', PLACEHOLDER],
-      ['RAM', PLACEHOLDER],
-      ['ROM', PLACEHOLDER]
-    ];
-  }
-
-  function liteSpecs(size) {
-    return [
-      ['Size', size + ' Inch'],
-      ['Panel Type', PLACEHOLDER],
-      ['Resolution', PLACEHOLDER],
-      ['Glass Panel', PLACEHOLDER],
-      ['Contrast Ratio', PLACEHOLDER],
-      ['Hardened Glass', PLACEHOLDER],
-      ['Dynamic Ratio', PLACEHOLDER],
-      ['Brightness', PLACEHOLDER],
-      ['Support OS', PLACEHOLDER],
-      ['Speaker', PLACEHOLDER],
-      ['CPU', PLACEHOLDER],
-      ['GPU', PLACEHOLDER],
-      ['NPU', PLACEHOLDER],
-      ['RAM', PLACEHOLDER],
-      ['ROM', PLACEHOLDER]
-    ];
-  }
-
-  var PRODUCTS = {
-    'zelt-pro-65-inch': {
-      category: 'Smart Board ZELT Pro',
-      name: 'ZELT Pro 65 Inch',
-      image: 'images/zelt-pro-65-inch.png',
-      specs: proSpecs(65, true)
+      ]
     },
     'zelt-pro-75-inch': {
       category: 'Smart Board ZELT Pro',
       name: 'ZELT Pro 75 Inch',
-      image: 'images/zelt-pro-75-inch.png',
-      specs: proSpecs(75, false)
+      image: 'images/zelt-lite-pro.png',
+      specs: [
+        ['Size', '75 Inch'],
+        ['Panel Type', 'D-LED'],
+        ['Resolution', '4K UHD'],
+        ['Glass Panel', 'Non-Glare w/ Zero Bonding'],
+        ['Contrast Ratio', '1200:1'],
+        ['Hardened Glass', 'Mohs-7 Level'],
+        ['Dynamic Ratio', '4000:1'],
+        ['Brightness', 'Over 450 cd/m²'],
+        ['Support OS', 'Android/Windows/Mac/Linux/Chrome-OS'],
+        ['Speaker', '15W × 2; 20W Subwoofer'],
+        ['CPU', 'Quad-Core Cortex A76 & Quad-core Cortex A55, Up-to 2.4GHz'],
+        ['GPU', 'Mali-G610 MC4'],
+        ['NPU', '6-TOPS'],
+        ['RAM', '16GB'],
+        ['ROM', '256GB']
+      ]
     },
     'zelt-pro-85-inch': {
       category: 'Smart Board ZELT Pro',
       name: 'ZELT Pro 85 Inch',
-      image: 'images/zelt-pro-85-inch.png',
-      specs: proSpecs(85, false)
+      image: 'images/zelt-lite-pro.png',
+      specs: [
+        ['Size', '85 Inch'],
+        ['Panel Type', 'D-LED'],
+        ['Resolution', '4K UHD'],
+        ['Glass Panel', 'Non-Glare w/ Zero Bonding'],
+        ['Contrast Ratio', '1200:1'],
+        ['Hardened Glass', 'Mohs-7 Level'],
+        ['Dynamic Ratio', '4000:1'],
+        ['Brightness', 'Over 450 cd/m²'],
+        ['Support OS', 'Android/Windows/Mac/Linux/Chrome-OS'],
+        ['Speaker', '15W × 2; 20W Subwoofer'],
+        ['CPU', 'Quad-Core Cortex A76 & Quad-core Cortex A55, Up-to 2.4GHz'],
+        ['GPU', 'Mali-G610 MC4'],
+        ['NPU', '6-TOPS'],
+        ['RAM', '16GB'],
+        ['ROM', '256GB']
+      ]
     },
     'zelt-pro-98-inch': {
       category: 'Smart Board ZELT Pro',
       name: 'ZELT Pro 98 Inch',
-      image: 'images/zelt-pro-98-inch.png',
-      specs: proSpecs(98, false)
+      image: 'images/zelt-lite-pro.png',
+      specs: [
+        ['Size', '98 Inch'],
+        ['Panel Type', 'D-LED'],
+        ['Resolution', '4K UHD'],
+        ['Glass Panel', 'Non-Glare w/ Zero Bonding'],
+        ['Contrast Ratio', '1200:1'],
+        ['Hardened Glass', 'Mohs-7 Level'],
+        ['Dynamic Ratio', '4000:1'],
+        ['Brightness', 'Over 450 cd/m²'],
+        ['Support OS', 'Android/Windows/Mac/Linux/Chrome-OS'],
+        ['Speaker', '15W × 2; 20W Subwoofer'],
+        ['CPU', 'Quad-Core Cortex A76 & Quad-core Cortex A55, Up-to 2.4GHz'],
+        ['GPU', 'Mali-G610 MC4'],
+        ['NPU', '6-TOPS'],
+        ['RAM', '16GB'],
+        ['ROM', '256GB']
+      ]
     },
     'zelt-pro-103-inch': {
       category: 'Smart Board ZELT Pro',
       name: 'ZELT Pro 103 Inch',
-      image: 'images/zelt-pro-103-inch.png',
-      specs: proSpecs(103, false)
+      image: 'images/zelt-lite-pro.png',
+      specs: [
+        ['Size', '103 Inch'],
+        ['Panel Type', 'D-LED'],
+        ['Resolution', '4K UHD'],
+        ['Glass Panel', 'Non-Glare w/ Zero Bonding'],
+        ['Contrast Ratio', '1200:1'],
+        ['Hardened Glass', 'Mohs-7 Level'],
+        ['Dynamic Ratio', '4000:1'],
+        ['Brightness', 'Over 450 cd/m²'],
+        ['Support OS', 'Android/Windows/Mac/Linux/Chrome-OS'],
+        ['Speaker', '15W × 2; 20W Subwoofer'],
+        ['CPU', 'Quad-Core Cortex A76 & Quad-core Cortex A55, Up-to 2.4GHz'],
+        ['GPU', 'Mali-G610 MC4'],
+        ['NPU', '6-TOPS'],
+        ['RAM', '16GB'],
+        ['ROM', '256GB']
+      ]
     },
     'zelt-pro-105-inch': {
       category: 'Smart Board ZELT Pro',
       name: 'ZELT Pro 105 Inch',
-      image: 'images/zelt-pro-105-inch.png',
-      specs: proSpecs(105, false)
+      image: 'images/zelt-lite-pro.png',
+      specs: [
+        ['Size', '105 Inch'],
+        ['Panel Type', 'D-LED'],
+        ['Resolution', '4K UHD'],
+        ['Glass Panel', 'Non-Glare w/ Zero Bonding'],
+        ['Contrast Ratio', '1200:1'],
+        ['Hardened Glass', 'Mohs-7 Level'],
+        ['Dynamic Ratio', '4000:1'],
+        ['Brightness', 'Over 450 cd/m²'],
+        ['Support OS', 'Android/Windows/Mac/Linux/Chrome-OS'],
+        ['Speaker', '15W × 2; 20W Subwoofer'],
+        ['CPU', 'Quad-Core Cortex A76 & Quad-core Cortex A55, Up-to 2.4GHz'],
+        ['GPU', 'Mali-G610 MC4'],
+        ['NPU', '6-TOPS'],
+        ['RAM', '16GB'],
+        ['ROM', '256GB']
+      ]
     },
     'zelt-lite-65-inch': {
       category: 'Smart Board ZELT Lite',
       name: 'ZELT Lite 65 Inch',
-      image: 'images/zelt-lite-65-inch.png',
-      specs: liteSpecs(65)
+      image: 'images/zelt-lite-pro.png',
+      specs: [
+        ['Size', '65 Inch'],
+        ['Panel Type', 'D-LED'],
+        ['Resolution', '4K UHD'],
+        ['Glass Panel', 'Non-Glare w/ Zero Bonding'],
+        ['Contrast Ratio', '1200:1'],
+        ['Hardened Glass', 'Mohs-7 Level'],
+        ['Dynamic Ratio', '4000:1'],
+        ['Brightness', 'Over 450 cd/m²'],
+        ['Support OS', 'Android/Windows/Mac/Linux/Chrome-OS'],
+        ['Speaker', '15W × 2; 20W Subwoofer'],
+        ['CPU', 'Quad-Core Cortex A76 & Quad-core Cortex A55, Up-to 2.4GHz'],
+        ['GPU', 'Mali-G610 MC4'],
+        ['NPU', '6-TOPS'],
+        ['RAM', '16GB'],
+        ['ROM', '256GB']
+      ]
     },
     'zelt-lite-75-inch': {
       category: 'Smart Board ZELT Lite',
       name: 'ZELT Lite 75 Inch',
-      image: 'images/zelt-lite-75-inch.png',
-      specs: liteSpecs(75)
+      image: 'images/zelt-lite-pro.png',
+      specs: [
+        ['Size', '75 Inch'],
+        ['Panel Type', 'D-LED'],
+        ['Resolution', '4K UHD'],
+        ['Glass Panel', 'Non-Glare w/ Zero Bonding'],
+        ['Contrast Ratio', '1200:1'],
+        ['Hardened Glass', 'Mohs-7 Level'],
+        ['Dynamic Ratio', '4000:1'],
+        ['Brightness', 'Over 450 cd/m²'],
+        ['Support OS', 'Android/Windows/Mac/Linux/Chrome-OS'],
+        ['Speaker', '15W × 2; 20W Subwoofer'],
+        ['CPU', 'Quad-Core Cortex A76 & Quad-core Cortex A55, Up-to 2.4GHz'],
+        ['GPU', 'Mali-G610 MC4'],
+        ['NPU', '6-TOPS'],
+        ['RAM', '16GB'],
+        ['ROM', '256GB']
+      ]
     },
     'zelt-lite-85-inch': {
       category: 'Smart Board ZELT Lite',
       name: 'ZELT Lite 85 Inch',
-      image: 'images/zelt-lite-85-inch.png',
-      specs: liteSpecs(85)
+      image: 'images/zelt-lite-pro.png',
+      specs: [
+        ['Size', '85 Inch'],
+        ['Panel Type', 'D-LED'],
+        ['Resolution', '4K UHD'],
+        ['Glass Panel', 'Non-Glare w/ Zero Bonding'],
+        ['Contrast Ratio', '1200:1'],
+        ['Hardened Glass', 'Mohs-7 Level'],
+        ['Dynamic Ratio', '4000:1'],
+        ['Brightness', 'Over 450 cd/m²'],
+        ['Support OS', 'Android/Windows/Mac/Linux/Chrome-OS'],
+        ['Speaker', '15W × 2; 20W Subwoofer'],
+        ['CPU', 'Quad-Core Cortex A76 & Quad-core Cortex A55, Up-to 2.4GHz'],
+        ['GPU', 'Mali-G610 MC4'],
+        ['NPU', '6-TOPS'],
+        ['RAM', '16GB'],
+        ['ROM', '256GB']
+      ]
     },
     'standing': {
       category: 'Aksesoris Smart Board ZELT',
@@ -433,10 +520,7 @@
       image: 'images/standing-smart-board-zelt.png',
       specs: [
         ['Type', 'Mobile Standee'],
-        ['Max Screen Size', 'Up to 86 Inch'],
-        ['Material', PLACEHOLDER],
-        ['Roda / Caster', PLACEHOLDER],
-        ['Pengaturan Ketinggian', PLACEHOLDER]
+        ['Max Screen Size', 'Up to 86 Inch']
       ]
     },
     'active-dongle-usb': {
@@ -444,10 +528,7 @@
       name: 'Active Dongle USB',
       image: 'images/active-dongle-usb-smart-board-zelt.png',
       specs: [
-        ['Type', 'Wireless Presenter Dongle'],
-        ['Konektivitas', PLACEHOLDER],
-        ['Kompatibilitas', PLACEHOLDER],
-        ['Jangkauan', PLACEHOLDER]
+        ['Type', 'Wireless Presenter Dongle']
       ]
     },
     'active-ops': {
@@ -457,9 +538,7 @@
       specs: [
         ['Processor', 'Intel Core i7 13th Gen'],
         ['RAM', '16GB'],
-        ['Storage', '512GB SSD'],
-        ['Slot Type', PLACEHOLDER],
-        ['Support OS', PLACEHOLDER]
+        ['Storage', '512GB SSD']
       ]
     }
   };
@@ -525,25 +604,39 @@
 
     catalogEl.hidden = true;
     detailEl.hidden = false;
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }
+
+  var savedScrollY = 0;
 
   function showCatalog() {
     detailEl.hidden = true;
     detailEl.innerHTML = '';
     catalogEl.hidden = false;
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: savedScrollY, left: 0, behavior: 'instant' });
   }
 
   document.addEventListener('click', function (e) {
     var trigger = e.target.closest('[data-zelt-detail]');
     if (trigger) {
-      renderDetail(trigger.getAttribute('data-zelt-detail'));
+      var key = trigger.getAttribute('data-zelt-detail');
+      savedScrollY = window.scrollY;
+      history.pushState({ zeltDetail: key }, '', '#' + key);
+      renderDetail(key);
       return;
     }
     var back = e.target.closest('[data-zelt-back]');
     if (back) {
       e.preventDefault();
+      history.back();
+    }
+  });
+
+  window.addEventListener('popstate', function (e) {
+    var state = e.state;
+    if (state && state.zeltDetail) {
+      renderDetail(state.zeltDetail);
+    } else {
       showCatalog();
     }
   });
