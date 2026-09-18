@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 
@@ -511,7 +511,8 @@
     var back = e.target.closest('[data-samsung-back]');
     if (back) {
       e.preventDefault();
-      history.back();
+      history.pushState({ samsungDetail: null }, '', location.pathname);
+      showCatalog();
     }
   });
 
@@ -523,6 +524,14 @@
       showCatalog();
     }
   });
+
+  (function initFromHash() {
+    var key = location.hash.slice(1);
+    if (key && PRODUCTS[key]) {
+      renderDetail(key);
+      history.replaceState({ samsungDetail: key }, '', location.hash);
+    }
+  })();
 })();
 </script>
 </body>
