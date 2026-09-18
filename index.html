@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=7">
 
 <meta name="google-site-verification" content="_2GnxY93JHpN0ZOEhqvdRF__C1net-U2g3ti7mCw--o" />
 </head>
@@ -272,50 +272,53 @@
         <p class="reveal">Informasi dan wawasan seputar Smart Board serta solusi teknologi untuk pendidikan dan kebutuhan bisnis.</p>
       </div>
 
+      <!-- GRAV: latest articles loop => {% set articles = pages.find('/artikel').children.published.order('date', 'desc').slice(0, 3) %} -->
+      <!-- GRAV: first item of `articles` (index 0) renders as the featured card -->
       <article class="artikel-featured reveal">
-        <a href="/artikel/manfaat-smart-board-untuk-pembelajaran-modern" class="artikel-featured-image">
-          <img src="images/training-dan-profesional.jpg" alt="Smart board digunakan dalam suasana pembelajaran dan presentasi modern" width="900" height="600" loading="lazy">
+        <a href="artikel-detail.html" class="artikel-featured-image"> <!-- GRAV: article.url -->
+          <img src="images/training-dan-profesional.jpg" alt="Judul Artikel" width="900" height="600" loading="lazy"> <!-- GRAV: article.media['featured'], article.title as alt -->
         </a>
         <div class="artikel-featured-content">
           <div class="artikel-meta">
-            <span class="artikel-category">Smart Board</span>
-            <span class="artikel-date">12 Maret 2026</span>
+            <span class="artikel-category">Kategori</span> <!-- GRAV: article.header.category -->
+            <span class="artikel-date">01 Januari 2026</span> <!-- GRAV: article.date|date('d F Y') -->
           </div>
-          <p class="artikel-title"><a href="/artikel/manfaat-smart-board-untuk-pembelajaran-modern">Manfaat Smart Board untuk Pembelajaran Modern</a></p>
-          <p class="artikel-desc">Smart board membantu menciptakan pembelajaran yang lebih interaktif, menarik, dan efektif di era digital.</p>
-          <a href="/artikel/manfaat-smart-board-untuk-pembelajaran-modern" class="artikel-link">Baca Selengkapnya &rarr;</a>
+          <p class="artikel-title"><a href="artikel-detail.html">Judul Artikel</a></p> <!-- GRAV: article.title -->
+          <p class="artikel-desc">Ringkasan singkat artikel akan tampil di sini.</p> <!-- GRAV: article.header.excerpt -->
+          <a href="artikel-detail.html" class="artikel-link">Baca Selengkapnya &rarr;</a> <!-- GRAV: article.url -->
         </div>
       </article>
 
+      <!-- GRAV: remaining items of `articles` (index 1-2), repeat .artikel-thumb per item -->
       <div class="artikel-thumbs">
 
         <article class="artikel-thumb reveal">
-          <a href="/artikel/panduan-memilih-smart-board-yang-tepat-untuk-kantor" class="artikel-thumb-image">
-            <img src="images/perusahaan-dan-kantor.jpg" alt="Smart board digunakan dalam suasana meeting dan kantor modern" width="900" height="600" loading="lazy">
+          <a href="artikel-detail.html" class="artikel-thumb-image">
+            <img src="images/perusahaan-dan-kantor.jpg" alt="Judul Artikel" width="900" height="600" loading="lazy">
           </a>
           <div class="artikel-thumb-content">
             <div class="artikel-meta">
-              <span class="artikel-category">Tips &amp; Trik</span>
-              <span class="artikel-date">08 Maret 2026</span>
+              <span class="artikel-category">Kategori</span>
+              <span class="artikel-date">01 Januari 2026</span>
             </div>
-            <p class="artikel-title"><a href="/artikel/panduan-memilih-smart-board-yang-tepat-untuk-kantor">Panduan Memilih Smart Board yang Tepat untuk Kantor</a></p>
-            <p class="artikel-desc">Ketahui faktor-faktor penting yang perlu dipertimbangkan sebelum memilih smart board untuk kebutuhan kantor Anda.</p>
-            <a href="/artikel/panduan-memilih-smart-board-yang-tepat-untuk-kantor" class="artikel-link">Baca Selengkapnya &rarr;</a>
+            <p class="artikel-title"><a href="artikel-detail.html">Judul Artikel</a></p>
+            <p class="artikel-desc">Ringkasan singkat artikel akan tampil di sini.</p>
+            <a href="artikel-detail.html" class="artikel-link">Baca Selengkapnya &rarr;</a>
           </div>
         </article>
 
         <article class="artikel-thumb reveal">
-          <a href="/artikel/smart-board-solusi-terbaik-untuk-sekolah-masa-kini" class="artikel-thumb-image">
-            <img src="images/sekolah-dan-kampus.jpg" alt="Smart board digunakan dalam suasana sekolah dan ruang kelas" width="900" height="600" loading="lazy">
+          <a href="artikel-detail.html" class="artikel-thumb-image">
+            <img src="images/sekolah-dan-kampus.jpg" alt="Judul Artikel" width="900" height="600" loading="lazy">
           </a>
           <div class="artikel-thumb-content">
             <div class="artikel-meta">
-              <span class="artikel-category">Pendidikan</span>
-              <span class="artikel-date">03 Maret 2026</span>
+              <span class="artikel-category">Kategori</span>
+              <span class="artikel-date">01 Januari 2026</span>
             </div>
-            <p class="artikel-title"><a href="/artikel/smart-board-solusi-terbaik-untuk-sekolah-masa-kini">Smart Board Solusi Terbaik untuk Sekolah Masa Kini</a></p>
-            <p class="artikel-desc">Tingkatkan kualitas pembelajaran dengan smart board yang interaktif, mudah digunakan, dan mendukung kolaborasi.</p>
-            <a href="/artikel/smart-board-solusi-terbaik-untuk-sekolah-masa-kini" class="artikel-link">Baca Selengkapnya &rarr;</a>
+            <p class="artikel-title"><a href="artikel-detail.html">Judul Artikel</a></p>
+            <p class="artikel-desc">Ringkasan singkat artikel akan tampil di sini.</p>
+            <a href="artikel-detail.html" class="artikel-link">Baca Selengkapnya &rarr;</a>
           </div>
         </article>
 

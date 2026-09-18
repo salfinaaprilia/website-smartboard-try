@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -278,9 +278,7 @@
 (function () {
   'use strict';
 
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
+  var PLACEHOLDER = 'Segera diperbarui';
 
   var PRODUCTS = {
     'ds-d5c65rba': {
@@ -290,11 +288,11 @@
       imageClass: 'produk-detail-image produk-detail-image--board',
       specs: [
         ['Size', '65 Inch'],
+        ['Panel Type', PLACEHOLDER],
         ['Resolution', '4K'],
-        ['Operating System', 'Android 14'],
-        ['Memory', '8 GB'],
-        ['Storage', '128 GB'],
-        ['Touch', '50 Points Infrared Touch']
+        ['Operating System', PLACEHOLDER],
+        ['Konektivitas', PLACEHOLDER],
+        ['Speaker', PLACEHOLDER]
       ]
     },
     'ds-d5c75rba': {
@@ -304,11 +302,11 @@
       imageClass: 'produk-detail-image produk-detail-image--board',
       specs: [
         ['Size', '75 Inch'],
+        ['Panel Type', PLACEHOLDER],
         ['Resolution', '4K'],
-        ['Operating System', 'Android 14'],
-        ['Memory', '8 GB'],
-        ['Storage', '128 GB'],
-        ['Touch', '50 Points Infrared Touch']
+        ['Operating System', PLACEHOLDER],
+        ['Konektivitas', PLACEHOLDER],
+        ['Speaker', PLACEHOLDER]
       ]
     },
     'ds-d5c86rba': {
@@ -318,11 +316,11 @@
       imageClass: 'produk-detail-image produk-detail-image--board',
       specs: [
         ['Size', '86 Inch'],
+        ['Panel Type', PLACEHOLDER],
         ['Resolution', '4K'],
-        ['Operating System', 'Android 14'],
-        ['Memory', '8 GB'],
-        ['Storage', '128 GB'],
-        ['Touch', '50 Points Infrared Touch']
+        ['Operating System', PLACEHOLDER],
+        ['Konektivitas', PLACEHOLDER],
+        ['Speaker', PLACEHOLDER]
       ]
     },
     'ds-d5b65rbep': {
@@ -332,11 +330,11 @@
       imageClass: 'produk-detail-image produk-detail-image--board',
       specs: [
         ['Size', '65 Inch'],
+        ['Panel Type', PLACEHOLDER],
         ['Resolution', '4K'],
-        ['Operating System', 'Android 14'],
-        ['Memory', '8 GB'],
-        ['Storage', '128 GB'],
-        ['Touch', '50 Points Infrared Touch']
+        ['Operating System', PLACEHOLDER],
+        ['Konektivitas', PLACEHOLDER],
+        ['Speaker', PLACEHOLDER]
       ]
     },
     'ds-d5b75rbep': {
@@ -346,11 +344,11 @@
       imageClass: 'produk-detail-image produk-detail-image--board',
       specs: [
         ['Size', '75 Inch'],
-        ['Resolution', '4K'],
-        ['Operating System', 'Android 14'],
-        ['Memory', '8 GB'],
-        ['Storage', '128 GB'],
-        ['Touch', '50 Points Infrared Touch']
+        ['Panel Type', PLACEHOLDER],
+        ['Resolution', PLACEHOLDER],
+        ['Operating System', PLACEHOLDER],
+        ['Konektivitas', PLACEHOLDER],
+        ['Speaker', PLACEHOLDER]
       ]
     },
     'ds-d5b86rbep': {
@@ -360,11 +358,11 @@
       imageClass: 'produk-detail-image produk-detail-image--board',
       specs: [
         ['Size', '86 Inch'],
-        ['Resolution', '4K'],
+        ['Panel Type', PLACEHOLDER],
+        ['Resolution', PLACEHOLDER],
         ['Operating System', 'Android 14'],
-        ['Memory', '8 GB'],
-        ['Storage', '128 GB'],
-        ['Touch', '50 Points Infrared Touch']
+        ['Konektivitas', PLACEHOLDER],
+        ['Speaker', PLACEHOLDER]
       ]
     },
     'active-dongle': {
@@ -373,12 +371,10 @@
       image: 'images/Active-Dongle-Hikvision-DS-D5SC3B-B.png',
       imageClass: 'produk-detail-image',
       specs: [
-        ['Type', 'Wireless Dongle'],
-        ['Resolution', '4K'],
-        ['Connectivity', '2.4G / 5G'],
-        ['Interface', 'Type-C'],
-        ['NFC', 'Supported'],
-        ['Compatibility', 'D5B/C/D Series, D5B EL/FL Series, D5C Series']
+        ['Type', 'Wireless Presenter Dongle'],
+        ['Konektivitas', PLACEHOLDER],
+        ['Kompatibilitas', PLACEHOLDER],
+        ['Jangkauan', PLACEHOLDER]
       ]
     },
     'mobile-bracket': {
@@ -387,8 +383,10 @@
       image: 'images/Mobile-Bracket-Hikvision-DS-D5ABKY3-SL.png',
       imageClass: 'produk-detail-image',
       specs: [
-        ['Type', 'Mobile Bracket'],
-        ['Screen Size', '55–75 Inch']
+        ['Type', 'Mobile Bracket Beroda'],
+        ['Kompatibilitas', PLACEHOLDER],
+        ['Material', PLACEHOLDER],
+        ['Pengaturan Ketinggian', PLACEHOLDER]
       ]
     },
     'ops-module': {
@@ -397,11 +395,10 @@
       image: 'images/OPS-module-Hikvision-DS-D5AC12G5-8S2.png',
       imageClass: 'produk-detail-image',
       specs: [
-        ['Processor', 'Intel Core i5 12th Gen'],
-        ['RAM', '8 GB'],
-        ['Storage', '256 GB SSD'],
-        ['Wi-Fi', 'Wi-Fi 6'],
-        ['Operating System', 'Windows 11']
+        ['Type', 'Modul PC OPS'],
+        ['Processor', PLACEHOLDER],
+        ['RAM', PLACEHOLDER],
+        ['Storage', PLACEHOLDER]
       ]
     }
   };
@@ -467,39 +464,25 @@
 
     catalogEl.hidden = true;
     detailEl.hidden = false;
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    window.scrollTo(0, 0);
   }
-
-  var savedScrollY = 0;
 
   function showCatalog() {
     detailEl.hidden = true;
     detailEl.innerHTML = '';
     catalogEl.hidden = false;
-    window.scrollTo({ top: savedScrollY, left: 0, behavior: 'instant' });
+    window.scrollTo(0, 0);
   }
 
   document.addEventListener('click', function (e) {
     var trigger = e.target.closest('[data-hikvision-detail]');
     if (trigger) {
-      var key = trigger.getAttribute('data-hikvision-detail');
-      savedScrollY = window.scrollY;
-      history.pushState({ hikvisionDetail: key }, '', '#' + key);
-      renderDetail(key);
+      renderDetail(trigger.getAttribute('data-hikvision-detail'));
       return;
     }
     var back = e.target.closest('[data-hikvision-back]');
     if (back) {
       e.preventDefault();
-      history.back();
-    }
-  });
-
-  window.addEventListener('popstate', function (e) {
-    var state = e.state;
-    if (state && state.hikvisionDetail) {
-      renderDetail(state.hikvisionDetail);
-    } else {
       showCatalog();
     }
   });

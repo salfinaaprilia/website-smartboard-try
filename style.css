@@ -260,7 +260,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);}
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(90deg,var(--primary-dark) 0%,var(--primary-dark) 42%,rgba(11,31,58,.6) 52%,rgba(11,31,58,0) 68%);
+  background:linear-gradient(90deg,var(--primary-dark) 0%,var(--primary-dark) 38%,rgba(11,31,58,.85) 48%,rgba(11,31,58,.6) 58%,rgba(11,31,58,.38) 68%,rgba(11,31,58,.2) 78%,rgba(11,31,58,.08) 88%,rgba(11,31,58,0) 97%);
   z-index:1;
 }
 .hero .container{position:relative;z-index:2;}

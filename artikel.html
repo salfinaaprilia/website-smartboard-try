@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -57,64 +57,67 @@
         <p class="reveal">Kumpulan artikel seputar solusi Smart Board, Interactive Flat Panel, dan teknologi ruang kolaborasi.</p>
       </div>
 
+      <!-- GRAV: full article listing => {% set articles = pages.find('/artikel').children.published.order('date', 'desc') %} -->
+      <!-- GRAV: first item of `articles` (index 0) renders as the featured card -->
       <article class="artikel-showcase-featured reveal">
         <div class="artikel-showcase-featured-image">
-          <img src="assets/article/article-01.jpg" alt="Judul Artikel Utama" loading="lazy">
+          <img src="assets/article/article-01.jpg" alt="Judul Artikel" loading="lazy"> <!-- GRAV: article.media['featured'], article.title as alt -->
         </div>
         <div class="artikel-showcase-featured-content">
           <div class="artikel-showcase-meta">
-            <span class="artikel-showcase-category">Smart Board</span>
-            <span class="artikel-showcase-date">12 Maret 2026</span>
+            <span class="artikel-showcase-category">Kategori</span> <!-- GRAV: article.header.category -->
+            <span class="artikel-showcase-date">01 Januari 2026</span> <!-- GRAV: article.date|date('d F Y') -->
           </div>
-          <h3>Judul Artikel Utama di Sini</h3>
-          <p>Ringkasan singkat artikel utama. Ganti teks ini dengan penjelasan detail mengenai topik yang dibahas dalam artikel.</p>
-          <a href="artikel-detail.html" class="btn-primary">Baca Selengkapnya &rarr;</a>
+          <h3>Judul Artikel</h3> <!-- GRAV: article.title -->
+          <p>Ringkasan singkat artikel akan tampil di sini.</p> <!-- GRAV: article.header.excerpt -->
+          <a href="artikel-detail.html" class="btn-primary">Baca Selengkapnya &rarr;</a> <!-- GRAV: article.url -->
         </div>
       </article>
 
+      <!-- GRAV: remaining items of `articles` (index 1+), repeat .artikel-showcase-card per item -->
       <div class="artikel-showcase-grid">
 
         <article class="artikel-showcase-card reveal">
           <div class="artikel-showcase-card-image">
-            <img src="assets/article/article-02.jpg" alt="Judul Artikel 2" loading="lazy">
+            <img src="assets/article/article-02.jpg" alt="Judul Artikel" loading="lazy">
           </div>
           <div class="artikel-showcase-card-content">
             <div class="artikel-showcase-meta">
-              <span class="artikel-showcase-category">Tips &amp; Trik</span>
-              <span class="artikel-showcase-date">08 Maret 2026</span>
+              <span class="artikel-showcase-category">Kategori</span>
+              <span class="artikel-showcase-date">01 Januari 2026</span>
             </div>
-            <h3>Judul Artikel 2</h3>
-            <p>Ringkasan singkat artikel 2. Ganti teks ini dengan penjelasan detail mengenai topik yang dibahas.</p>
+            <h3>Judul Artikel</h3>
+            <p>Ringkasan singkat artikel akan tampil di sini.</p>
             <a href="artikel-detail.html" class="artikel-showcase-link">Baca Selengkapnya &rarr;</a>
           </div>
         </article>
 
         <article class="artikel-showcase-card reveal">
           <div class="artikel-showcase-card-image">
-            <img src="assets/article/article-03.jpg" alt="Judul Artikel 3" loading="lazy">
+            <img src="assets/article/article-03.jpg" alt="Judul Artikel" loading="lazy">
           </div>
           <div class="artikel-showcase-card-content">
             <div class="artikel-showcase-meta">
-              <span class="artikel-showcase-category">Pendidikan</span>
-              <span class="artikel-showcase-date">03 Maret 2026</span>
+              <span class="artikel-showcase-category">Kategori</span>
+              <span class="artikel-showcase-date">01 Januari 2026</span>
             </div>
-            <h3>Judul Artikel 3</h3>
-            <p>Ringkasan singkat artikel 3. Ganti teks ini dengan penjelasan detail mengenai topik yang dibahas.</p>
+            <h3>Judul Artikel</h3>
+            <p>Ringkasan singkat artikel akan tampil di sini.</p>
             <a href="artikel-detail.html" class="artikel-showcase-link">Baca Selengkapnya &rarr;</a>
           </div>
         </article>
 
         <article class="artikel-showcase-card reveal">
           <div class="artikel-showcase-card-image">
-            <img src="assets/article/article-04.jpg" alt="Judul Artikel 4" loading="lazy">
+            <img src="assets/article/article-04.jpg" alt="Judul Artikel" loading="lazy">
           </div>
           <div class="artikel-showcase-card-content">
             <div class="artikel-showcase-meta">
-              <span class="artikel-showcase-category">Teknologi</span>
-              <span class="artikel-showcase-date">28 Februari 2026</span>
+              <span class="artikel-showcase-category">Kategori</span>
+              <span class="artikel-showcase-date">01 Januari 2026</span>
             </div>
-            <h3>Judul Artikel 4</h3>
-            <p>Ringkasan singkat artikel 4. Ganti teks ini dengan penjelasan detail mengenai topik yang dibahas.</p>
+            <h3>Judul Artikel</h3>
+            <p>Ringkasan singkat artikel akan tampil di sini.</p>
             <a href="artikel-detail.html" class="artikel-showcase-link">Baca Selengkapnya &rarr;</a>
           </div>
         </article>
